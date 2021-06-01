@@ -14,7 +14,7 @@ django-safedelete = "*"
 djangorestframework-jwt = "*"
 drf-yasg = "*"
 datetime = "*"
-djangorestframework-simplejwt = "*"
+django-better-admin-arrayfield = "*"
 
 [dev-packages]
 

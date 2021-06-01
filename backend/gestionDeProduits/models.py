@@ -4,6 +4,8 @@ from safedelete.models import SafeDeleteModel, SOFT_DELETE_CASCADE
 from django.utils.text import slugify
 import string
 import random
+from django_better_admin_arrayfield.models.fields import ArrayField
+
 
 def rand_slug():
     return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(6))
@@ -26,28 +28,12 @@ class SousCategorie(models.Model):
 class Produit(SafeDeleteModel):
     _safedelete_policy = SOFT_DELETE_CASCADE
     produit_id = models.BigAutoField(primary_key=True)
-    ETAT = (
-        ('A+', 'A+'),
-        ('A', 'A'),
-        ('B+', 'B+'),
-        ('B', 'B'),
-    )
-    
-    YES_NO = (
-        ('No', 'No'),
-        ('Yes', 'Yes'),
-        )
     nom = models.CharField(max_length=50)
     prix_en_euros = models.IntegerField()
     prix_en_bins = models.IntegerField()
     #Set category field  to null if the referenced category is deleted
     categorie = models.ForeignKey(Categorie,on_delete=models.SET_NULL,blank=True,null=True,)
     sous_categorie = models.ForeignKey(SousCategorie,on_delete=models.SET_NULL,blank=True,null=True,)
-    marque  = models.CharField(max_length=50)
-    modele = models.CharField(max_length=50)
-    version = models.CharField(max_length=50)
-    critere =  models.CharField(max_length=2, choices=ETAT)
-    fonctionnel = models.CharField(max_length=3, choices=YES_NO)
     description = models.CharField(max_length=300)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -79,7 +65,29 @@ class Image(SafeDeleteModel):
         managed = True 
 
 
+class Caracteristique(models.Model):
+
+    TYPE_CHOICES = (
+        ('select', 'Select'),
+        ('champs multiple', 'Champs multiple'),
+        ('texte', 'Texte'),
+        ('date', 'Date'),
+        )
     
+    sous_categorie = models.ForeignKey(SousCategorie,on_delete=models.SET_NULL, null = True)   
+    caracteristique = models.CharField(max_length = 50)
+    type = models.CharField(max_length=20, choices=TYPE_CHOICES, default = 'texte')
+    select_champs_multiple_choices = ArrayField(models.CharField(max_length=255), blank = True, null = True)
+    
+    
+class CaracteristiqueProduit(SafeDeleteModel):
+
+    _safedelete_policy = SOFT_DELETE_CASCADE
+    produit = models.ForeignKey(Produit,on_delete=models.CASCADE)
+    caracteristique = models.ForeignKey(Caracteristique,on_delete=models.SET_NULL,blank=True,null=True,)
+    champs_multiple_valeur = ArrayField(models.CharField(max_length=255), blank = True, null = True)
+    texteAndselect_valeur = models.CharField(max_length=255, blank=True, null=True)
+    date_valeur = models.DateField( blank=True, null=True)
 
 
     

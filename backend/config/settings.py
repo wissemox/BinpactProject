@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'authentification',
+    'django_better_admin_arrayfield',
 ]
 AUTH_USER_MODEL='authentification.User'
 

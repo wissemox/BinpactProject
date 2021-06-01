@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Produit, Image, Categorie, SousCategorie 
+from .models import Caracteristique, Produit, Image, Categorie, SousCategorie, CaracteristiqueProduit
  
 class ImageSerializer(serializers.ModelSerializer):
     class Meta:
@@ -14,10 +14,6 @@ class ProduitSerializer(serializers.ModelSerializer):
         'prix_en_euros',
         'prix_en_bins',
         'categorie','sous_categorie',
-        'marque','modele',
-        'version',
-        'critere',
-        'fonctionnel',
         'description',
         'slug')
         extra_kwargs = {
@@ -26,6 +22,21 @@ class ProduitSerializer(serializers.ModelSerializer):
         'slug': {'read_only': True},
         
         }
+
+class CaracteristiqueSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Caracteristique
+        fields = ('caracteristique',
+        'type',
+        'select_champs_multiple_choices')
+
+class CaracteristiqueProduitSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CaracteristiqueProduit
+        fields = ('produit', 
+        'caracteristique',
+        'valeur')
+          
         
     
  

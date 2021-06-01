@@ -1,13 +1,16 @@
-from .models import Produit, Image, Categorie, SousCategorie 
+from .models import Produit, Image, Categorie, SousCategorie, CaracteristiqueProduit, Caracteristique
 from django.http import HttpResponse, Http404, JsonResponse
 from django.views.decorators.cache import cache_control 
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework.decorators import api_view 
 from rest_framework.parsers import JSONParser 
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
 from rest_framework.filters import SearchFilter, OrderingFilter
-from .serializers import ProduitSerializer, ImageSerializer
+from .serializers import ProduitSerializer, ImageSerializer, CaracteristiqueSerializer
 import json
+
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)   
 @api_view(['GET'])
@@ -16,19 +19,16 @@ def index(request):
         #Lister products created by current user
         produits = Produit.objects.filter(owner=request.user)
         #The many=True argument specified serializes multiple Produit instances.
-        serializer = ProduitSerializer(produits, many=True)
         serializer_data=[]
-        for data in serializer.data:
-            categorie = Categorie.objects.get(id = data['categorie'])
-            sous_categorie = SousCategorie.objects.get(id = data['sous_categorie'])
-            data['categorie'] = categorie.categorie
-            data['sous_categorie'] = sous_categorie.sous_categorie
-            serializer_data.append(data)
+        for produit in produits:
+            data = ProduitSerializer(produit).data
+            data['categorie'] = produit.categorie.categorie
+            data['sous_categorie'] = produit.sous_categorie.sous_categorie
+            serializer_data.append(data)    
         return JsonResponse(serializer_data, safe=False) 
     else:
         raise Http404("You are not logged in!")
 
-    
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)       
 @api_view(['GET'])
 def detail_view(request, slug):
@@ -40,15 +40,26 @@ def detail_view(request, slug):
             return HttpResponse(status=404)    
         serializer = ProduitSerializer(produit)
         serializer_data = serializer.data
-        categorie = Categorie.objects.get(id = serializer_data['categorie'])
-        sous_categorie = SousCategorie.objects.get(id = serializer_data['sous_categorie'])
-        serializer_data['categorie'] = categorie.categorie
-        serializer_data['sous_categorie'] = sous_categorie.sous_categorie
+
+        #Get the product characteristics
+        get_caracteristiques_produit(produit, serializer_data)
+
+        #Get the product category and sub category name    
+        serializer_data['categorie'] = produit.categorie.categorie
+        serializer_data['sous_categorie'] = produit.sous_categorie.sous_categorie
+        
         return JsonResponse(serializer_data, safe=False)
     else:
         raise Http404("You are not logged in!")
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)      
+@api_view(['GET'])         
+def get_caracteristiques_sousCategorie(request, sous_categorie_id) :
     
+    caracteristiques_sous_categorie = Caracteristique.objects.filter(sous_categorie_id = sous_categorie_id)
+    caracteristiques_serializer = CaracteristiqueSerializer(caracteristiques_sous_categorie, many = True)
+    return JsonResponse(caracteristiques_serializer.data, status=201, safe = False)        
+
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)   
 @api_view(['POST'])
 def upload(request):
@@ -60,9 +71,10 @@ def upload(request):
             serializer = ProduitSerializer(data=data)
             if serializer.is_valid():
                 prix_en_bins = convert_euros_bins(data['prix_en_euros'])
-                created = serializer.save(owner=request.user, prix_en_bins=prix_en_bins)
+                produitCreated = serializer.save(owner=request.user, prix_en_bins=prix_en_bins)
                 for image in images:
-                    photo = Image.objects.create(produit=created,image = image,)
+                    photo = Image.objects.create(produit = produitCreated, image = image,)
+                upload_caracteristiques_produit(data, produitCreated)
                 return JsonResponse(serializer.data, status=201)
             return JsonResponse(serializer.errors, status=400)
         else:
@@ -70,27 +82,35 @@ def upload(request):
     else: 
         raise Http404("You are not logged in!")
 
-    
-                
-
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)      
 @api_view(['PUT']) 
 def update_produit(request, slug):
-    if request.user.is_authenticated:  
+    if request.user.is_authenticated:
         try :
             produit = Produit.objects.get(slug=slug,owner= request.user)
         except Produit.DoesNotExist:
-            return HttpResponse(status=404)        
-        data = JSONParser().parse(request)
-        serializer = ProduitSerializer(produit, data=data)   
+            return HttpResponse(status=404)  
+
+        images = request.FILES.getlist("images")
+        data = json.loads(request.POST['data'])         
+        #data = JSONParser().parse(request)
+        serializer = ProduitSerializer(produit, data=data)  
+        # update product 
         if serializer.is_valid():
             prix_en_bins = convert_euros_bins(data['prix_en_euros'])
-            created = serializer.save(owner=request.user, prix_en_bins = prix_en_bins)
-            return JsonResponse(serializer.data)
+            produit_updated = serializer.save(owner=request.user, prix_en_bins = prix_en_bins)
+            # update images belong to the product
+            imagesProduit = Image.objects.filter(produit = produit_updated)
+            imagesProduit.delete()
+            for image in images:
+                photo = Image.objects.create(produit = produit_updated, image = image,)
+            # update characteristic belong to the product
+            update_caracteristiques_produit(data, produit_updated)
+            #return JsonResponse(serializer.data)
+            return HttpResponse(status=201)
         return JsonResponse(serializer.errors, status=400)
     else:
         raise Http404("You are not logged in!")
-
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)    
 @api_view(['DELETE'])
@@ -102,7 +122,10 @@ def delete_produit(request, slug):
             produit = Produit.objects.get(slug=slug,owner= request.user)
         except Produit.DoesNotExist:
             return HttpResponse(status=404) 
+        # every object refrenced to the product will be soft deleted (caracteristique, images ) because of 
+        # on_delete=models.CASCADE parameter
         produit.delete()
+
         return HttpResponse(status=204)
     else:
         raise Http404("You are not logged in!")
@@ -113,6 +136,62 @@ def convert_euros_bins(euros):
     bins = str(x*int(euros))
     return bins
 
+def upload_caracteristiques_produit(data, produit):
+    
+    for caracteristique in data['caracteristiques']:
+        caracteristiqueGet = Caracteristique.objects.get(sous_categorie = data['sous_categorie'], caracteristique = caracteristique['name'] )
+        type_caracteristique = caracteristiqueGet.type
+        caracteristiqueProduit = CaracteristiqueProduit.objects.create( produit = produit, caracteristique = caracteristiqueGet)
+        
+        if  type_caracteristique == "select" or type_caracteristique == "texte":
+            caracteristiqueProduit.texteAndselect_valeur = caracteristique['value']
+
+        elif  type_caracteristique == "champs multiple":
+                caracteristiqueProduit.champs_multiple_valeur = caracteristique['value']
+
+        elif  type_caracteristique ==  "date":
+                caracteristiqueProduit.date_valeur = caracteristique['value']
+   
+        caracteristiqueProduit.save()
+
+def update_caracteristiques_produit(data, produit):
+    
+    for caracteristique in data['caracteristiques']:
+        caracteristiqueGet = Caracteristique.objects.get(sous_categorie = data['sous_categorie'], caracteristique = caracteristique['name'] )
+        type_caracteristique = caracteristiqueGet.type
+        try:
+            caracteristiqueProduit = CaracteristiqueProduit.objects.get( produit = produit, caracteristique = caracteristiqueGet)
+        except CaracteristiqueProduit.DoesNotExist:
+            caracteristiqueProduit = CaracteristiqueProduit.objects.create( produit = produit, caracteristique = caracteristiqueGet)
+
+        if  type_caracteristique == "select" or type_caracteristique == "texte":
+            caracteristiqueProduit.texteAndselect_valeur = caracteristique['value']
+
+        elif  type_caracteristique == "champs multiple":
+                caracteristiqueProduit.champs_multiple_valeur = caracteristique['value']
+
+        elif  type_caracteristique ==  "date":
+                caracteristiqueProduit.date_valeur = caracteristique['value']
+    
+        caracteristiqueProduit.save()       
+
+def get_caracteristiques_produit(produit, serializer_data):
+
+    caracteristiques_produit = CaracteristiqueProduit.objects.filter(produit = produit)
+    for caracteristique_produit in caracteristiques_produit:
+        nom_caracteristique = caracteristique_produit.caracteristique.caracteristique
+        type_caracteristique = caracteristique_produit.caracteristique.type
+
+        if  type_caracteristique == "select" or type_caracteristique == "texte":
+            valeur_caracteristique = caracteristique_produit.texteAndselect_valeur
+
+        elif  type_caracteristique == "champs multiple":
+            valeur_caracteristique = caracteristique_produit.champs_multiple_valeur
+
+        elif  type_caracteristique == "date":
+            valeur_caracteristique = caracteristique_produit.date_valeur
+        
+        serializer_data[nom_caracteristique] = valeur_caracteristique
 
 class ApiProduitsListView(ListAPIView):
     queryset = Produit.objects.all()
