@@ -4,8 +4,9 @@ import Register02Check4 from './Register02Check4'
 import {useDispatch , useSelector} from 'react-redux'
 import {registerUser} from '../../js/actions/authActions'
 import { Redirect } from 'react-router'
-
-const Register02Check3 = ({Test05}) => {
+import ModalChange from './ModalChange'
+import ModalChangeUsername from './ModalUsername'
+const Register02Check3 = ({Test05,setBolen02,Prevlise}) => {
  const email =JSON.parse(localStorage.getItem('Email')) 
  const Prenom =JSON.parse(localStorage.getItem('Prenom')) 
  const name =JSON.parse(localStorage.getItem('name')) 
@@ -28,18 +29,26 @@ const Register02Check3 = ({Test05}) => {
         Test05(Sexe,adresse,pays,ville,DateNaissance)
         dispatch(registerUser({ prenom:Prenom,email:email, adresse:adresse ,tel:"string",pays:pays,ville:pays,nom:"string",code_postal:150, username:name,password:password , role:role ,nom_communaute:Nomcommunauté,sexe:Sexe,date_naissance:DateNaissance}))
     }
-
+   
     return (
         
         <>
         {console.log(Sexe)}
         {Data && <Redirect to="/Favoire"/>}
         {Bolen03 ?<Register02Check4/> :   <div  className="DisplayFlex4">
+      
            <div data-Aos="fade" className="BakGroundLogin02d">
                <div className="Inspation">
+                 
                     <div className="Inscripation">
                         <p data-Aos="fade-up">INSCRIPATION</p>
                         <div data-Aos="fade-left" >
+                        <div className="Butadw">
+                       <div className="Butadw02">
+              
+               </div>
+               
+               </div>
                             {/* Verfaction here */}
                             <div data-Aos="fade-up" className="ErroreDesign">
                             <h6 data-Aos="fade-up"> {errors&&errors.sexe}</h6>
@@ -80,8 +89,10 @@ const Register02Check3 = ({Test05}) => {
                         </div>
                     </div>
                     
-                <div className="Daz">
-                   <button  onClick={RegisterUser} >NEXT</button>
+                <div className="FlexBox">
+                    <button onClick={Prevlise} className="Precedent2">Precedent</button>
+                   <button className="Suivant"  onClick={RegisterUser} >Suivant</button>
+                  
                 </div>
                     <div className="Accomplid">
                     <span>70% Accompli..</span>
