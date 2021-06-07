@@ -15,6 +15,7 @@ djangorestframework-jwt = "*"
 drf-yasg = "*"
 datetime = "*"
 django-better-admin-arrayfield = "*"
+django-crontab = "*"
 
 [dev-packages]
 

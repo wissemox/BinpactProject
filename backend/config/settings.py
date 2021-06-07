@@ -53,7 +53,15 @@ INSTALLED_APPS = [
     'drf_yasg',
     'authentification',
     'django_better_admin_arrayfield',
+    'django_crontab',
 ]
+# The end ban cron job is scheduled to be run at midnight every day
+# delete_unpublished cron job is scheduled to be run  Every day at 1am
+CRONJOBS = [
+    ('0 0 12 * * ?', 'authentification.cron.end_ban_job'),
+    ('0 0 1 * * ?', 'gestionDeProduits.cron.delete_unpublished_job'),
+]
+
 AUTH_USER_MODEL='authentification.User'
 
 MIDDLEWARE = [

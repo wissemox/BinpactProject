@@ -144,6 +144,8 @@ class User(AbstractBaseUser, PermissionsMixin, SafeDeleteModel):
     photo = models.CharField(max_length=255, blank=True, null=True)
     slug = models.SlugField(max_length=250,null=True, unique=True) 
     is_verified = models.BooleanField(default=False)
+    is_banned  = models.BooleanField(default=False)
+    end_time_ban = models.DateTimeField(null=True, blank=True) 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     date_creation = models.DateTimeField(auto_now_add=True)

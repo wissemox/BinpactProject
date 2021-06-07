@@ -14,7 +14,7 @@ class ProduitSerializer(serializers.ModelSerializer):
         'prix_en_euros',
         'prix_en_bins',
         'categorie','sous_categorie',
-        'description',
+        'description','quantite',
         'slug')
         extra_kwargs = {
         'prix_en_euros': {'write_only': True},

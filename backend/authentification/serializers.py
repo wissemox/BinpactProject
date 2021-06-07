@@ -118,6 +118,8 @@ class LoginSerializer(serializers.ModelSerializer):
 
         if not user:
             raise AuthenticationFailed('Invalid credentials, try again')
+        if user.is_banned:
+            raise AuthenticationFailed('You are banned')
         if not user.is_active:
             raise AuthenticationFailed('Account disabled, contact admin')
         if not user.is_verified:

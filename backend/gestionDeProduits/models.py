@@ -7,6 +7,7 @@ import random
 from django_better_admin_arrayfield.models.fields import ArrayField
 
 
+
 def rand_slug():
     return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(6))
 # Create your models here.
@@ -25,6 +26,12 @@ class SousCategorie(models.Model):
     def __str__(self):
         return self.sous_categorie
 
+
+STATUS_CHOICES = (
+        ('published', 'PUBLISHED'),
+        ('unpublished', 'UNPUBLISHED'),
+        )
+
 class Produit(SafeDeleteModel):
     _safedelete_policy = SOFT_DELETE_CASCADE
     produit_id = models.BigAutoField(primary_key=True)
@@ -35,6 +42,9 @@ class Produit(SafeDeleteModel):
     categorie = models.ForeignKey(Categorie,on_delete=models.SET_NULL,blank=True,null=True,)
     sous_categorie = models.ForeignKey(SousCategorie,on_delete=models.SET_NULL,blank=True,null=True,)
     description = models.CharField(max_length=300)
+    quantite = models.IntegerField(default = 1)
+    status = models.CharField(choices=STATUS_CHOICES, max_length = 30, default='published')
+    deadline_unpublished = models.DateTimeField(null=True, blank=True) 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE) 
