@@ -49,7 +49,10 @@ class Produit(SafeDeleteModel):
     updated_at = models.DateTimeField(auto_now=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE) 
     slug = models.SlugField(max_length=250,null=False, unique=True) 
-                       
+
+    def __str__(self):
+        return self.nom
+
     class Meta:
         app_label = 'gestionDeProduits'
         managed = True
@@ -62,6 +65,15 @@ class Produit(SafeDeleteModel):
         value = self.nom
         self.slug = slugify(rand_slug() + "-" + value)
         super().save(*args, **kwargs)
+
+class ProduitsSignalé(models.Model):
+    
+    produit = models.ForeignKey(Produit,on_delete=models.CASCADE)
+    reason = models.CharField(max_length=255, blank=True, null=True)
+    reported_at = models.DateTimeField(auto_now_add=True)
+
+    
+
 
 
 class Image(SafeDeleteModel):

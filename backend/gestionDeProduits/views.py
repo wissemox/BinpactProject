@@ -1,8 +1,10 @@
-from .models import Produit, Image, Categorie, SousCategorie, CaracteristiqueProduit, Caracteristique
+from .models import Produit, Image, Categorie, SousCategorie, CaracteristiqueProduit, Caracteristique, ProduitsSignalé
+from authentification.models import User
 from django.http import HttpResponse, Http404, JsonResponse
 from django.views.decorators.cache import cache_control 
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
+from authentification.utils import Util
 from rest_framework.decorators import api_view 
 from rest_framework.parsers import JSONParser 
 from rest_framework.pagination import PageNumberPagination
@@ -129,6 +131,30 @@ def delete_produit(request, slug):
         return HttpResponse(status=204)
     else:
         raise Http404("You are not logged in!")
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)    
+@api_view(['POST'])
+def signaler_produit(request, slug):
+    if request.user.is_authenticated:
+        try :
+            produit = Produit.objects.get(slug=slug)
+        except Produit.DoesNotExist:
+            return HttpResponse(status=404) 
+        reason  = request.POST['reason']    
+        ProduitsSignalé.objects.create(produit = produit, reason = reason,)
+        # for now send email if a product was reported after it will be notification in the admin platform
+        staff_users = User.objects.filter(is_staff = True)
+        subject = 'A new product was reported'
+        motif = str(produit.nom) + ' created by ' + str(produit.owner) + ' was reported!' 
+        for email in staff_users:
+            data = {'email_body': motif, 'to_email': email,
+                    'email_subject': subject}
+
+            Util.send_email(data)
+        
+        return HttpResponse(status=201)
+    else:
+        raise Http404("You are not logged in!")        
 
 
 def convert_euros_bins(euros):

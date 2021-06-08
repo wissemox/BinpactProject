@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db import models
-from .models import Produit, Image, Categorie, SousCategorie, Caracteristique, CaracteristiqueProduit
+from .models import Produit, Image, Categorie, SousCategorie, Caracteristique, CaracteristiqueProduit, ProduitsSignalé
 from django.contrib.admin.helpers import ActionForm
 from django import forms
 from authentification.utils import Util
@@ -69,11 +69,14 @@ class ProduitAdmin(admin.ModelAdmin):
         queryset.update(status = 'published')        
 
 
-
+class ProduitsSignaléAdmin(admin.ModelAdmin):
+    #model = SousCategorie
+    list_display = ('produit', 'reason', 'reported_at')
 
 admin.site.register(Produit, ProduitAdmin)
 admin.site.register(Image)
 admin.site.register(Categorie, CategorieAdmin)
 admin.site.register(SousCategorie,SousCategorieAdmin)
 admin.site.register(Caracteristique, CaracteristiqueAdmin)
+admin.site.register(ProduitsSignalé, ProduitsSignaléAdmin)
 #admin.site.register(CaracteristiqueProduit) # it should be deleted 
