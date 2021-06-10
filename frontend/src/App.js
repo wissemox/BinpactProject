@@ -13,6 +13,9 @@ import './Css/padding/padding.css'
 import './Css/Resposive/HomePage.css'
 import './Css/Animation/AnimationLogo.css'
 import Home from './Compent/Home/Home.jsx'
+import './Css/Animation/Menu.css'
+import './Css/Animation/NavbarAnimation.css'
+import './Css/JustifyContent/JustifyContent.css'
 // Import Router 
 import {Route , BrowserRouter } from 'react-router-dom'
 //Compe Imported 
