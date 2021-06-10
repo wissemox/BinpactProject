@@ -4,6 +4,9 @@ from safedelete.models import SafeDeleteModel, SOFT_DELETE_CASCADE
 from django.utils.text import slugify
 import string
 import random
+#from sorl.thumbnail import get_thumbnail
+#from django.utils.html import format_html
+from django.utils.safestring import mark_safe
 from django_better_admin_arrayfield.models.fields import ArrayField
 
 
@@ -85,6 +88,13 @@ class Image(SafeDeleteModel):
     class Meta:
         app_label = 'gestionDeProduits'
         managed = True 
+    
+    def image_tag(self):
+        if self.image:
+            return mark_safe('<img src="%s" style="width: 100px; height:100px;" />' % self.image.url)
+        else:
+            return 'No Image Found'
+    image_tag.short_description = 'Image'    
 
 
 class Caracteristique(models.Model):
