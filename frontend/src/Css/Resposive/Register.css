@@ -3,7 +3,85 @@
 } */
 /*  mr-40
  */
-
+  @media screen and (max-width: 6200px) {
+    .ResposiveWidhtMargin{
+        margin-left: 20%;
+    }
+    .h-720{
+        height: 2500px;
+    }
+    .widhtResposive{
+        width: 200px;
+    }
+    .widhtResposive01{
+        width: 300px;
+    }
+    .widhtResposive02{
+        width: 400px;
+    }
+}
+ @media screen and (max-width: 4700px) {
+  
+    .h-720{
+        height: 2300px;
+    }
+    .mr-40{
+        -webkit-transition: 2s;
+          
+           margin-right: 8rem;
+       }
+       .ml-10{
+           margin-left: 120px;
+       }
+}
+ @media screen and (max-width: 3100px) {
+  
+    .h-720{
+        height: 1400px;
+    }
+}
+ @media screen and (max-width: 2400px) {
+ 
+    .h-720{
+        height: 1200px;
+    }
+}
+ @media screen and (max-width: 2200px) {
+   
+    .h-720{
+        height: 1000px;
+    }
+}
+ @media screen and (max-width: 2000px) {
+   
+    .h-720{
+        height: 900px;
+    }
+}
+ @media screen and (max-width: 1800px) {
+ 
+    .h-720{
+        height: 800px;
+    }
+   
+}
+@media screen and (max-width: 1600px) {
+   
+  
+    .h-720{
+        height: 720px;
+    }
+    .widhtResposive{
+        width: 15%;
+    }
+    .widhtResposive01{
+        width: 25%;
+    }
+    .widhtResposive02{
+        width: 30%;
+    }
+ 
+}
  @media screen and (max-width: 1400px) {
     .ml-350{
         
@@ -17,6 +95,10 @@
    .mr-40{
     -webkit-transition: 2s;
        margin-right: 100px;
+       
+   }
+   .ml-10{
+       margin-left: 2.5rem;
    }
   }
 
@@ -167,6 +249,11 @@
   }
   
   @media screen and (max-width: 700px) {
+    .Inscipation{
+        -webkit-transition: 2s;
+       padding-left: 50px;
+       
+    }
     .ml-350{
         -webkit-transition: 2s;
     margin-left: 150px;
@@ -195,6 +282,11 @@
   }
 
   @media screen and (max-width: 600px) {
+
+    .Inscipation{
+        -webkit-transition: 2s;
+       padding-left: 40px;
+    }
     .ml-350{
         -webkit-transition: 2s;
     margin-left: 50px;
@@ -216,5 +308,11 @@
     .Resposive{
         -webkit-transition: 2s;
         margin-left: 80px;
+    }
+    .ResposiveWidhtMargin{
+        margin-left: 16%;
+    }
+    .ResposiveWidhtMargin{
+        width: 500px;
     }
   }

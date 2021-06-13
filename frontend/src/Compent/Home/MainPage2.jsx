@@ -3,7 +3,7 @@ import {Container , Box , Typography , IconButton , AppBar,Button,Input  } from 
 
 const MainPage2 = () => {
     return (
-       <Box className="bg-gray-100 mt-40		">
+       <Box style={{backgroundColor:"#F7F7F7"}} className=" mt-40		">
             <Container>
                 <Box className="flex flex-center ">
                     <Box className="NavBarResposive mt-20p wp-50 mb-5p" >
