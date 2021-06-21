@@ -9,19 +9,19 @@ const Catgory = () => {
       }, [])
  
     const[Product , setProduct]=useState([{
-    NameProuct:"Ordinater",
+    NameProuct:"Pour vous",
     Img:"kisspng-airpods-apple-headphones-iphone-sales-apple-airpods-bluetooth-telenor-nettbutikk-5bab7f85433541.5705478915379659572753.png"
     } , 
     {
-    NameProuct:"Smartphone",
+    NameProuct:"pour votre maison",
     Img:"pcApp.png"
     }, 
     {
-    NameProuct:"pc Ordinateur",
+    NameProuct:"pour votre bureu",
     Img:"kisspng-airpods-apple-headphones-iphone-sales-apple-airpods-bluetooth-telenor-nettbutikk-5bab7f85433541.5705478915379659572753.png"
     },
     {
-    NameProuct:"pc Ordinateur",
+    NameProuct:"pour vos enfants",
     Img:"Casque.png"
     }
 ])
@@ -29,14 +29,14 @@ const Catgory = () => {
         <Box>
             {/* Text */}
             <Container>
-                <Box data-aos="fade-up-right" className=" flex flex-center mt-10">
-                    <Box>
+                <Box data-aos="fade-up-right" className=" flex flex-center ">
+                    <Box className="mt-50R"  style={{marginBottom:"60px" }} >
                     <Typography className="colorBlue text-3xl font-medium" variant="p">Nos catégories</Typography>
                     </Box>
                 </Box>
             </Container>
         
-                <Box data-aos="fade-up-right" className="displayflex Resposive mb-100 mt-100 ">
+                <Box data-aos="fade-up-right" className="displayflex Resposive ml-8  ">
                        {Product.map((el)=>
                        <CatgoryMap el={el}/>)}
                 </Box>

@@ -12,6 +12,14 @@
     -o-background-size: cover;
     background-size: cover;
 }
+.BackgrounddImageurl01{
+    background: no-repeat fixed 100% 100%;
+    background-color: red;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 .BackgroundImageurl02{
     background: url('BackGround03.gif')no-repeat fixed 100% 100%;
     -moz-background-size: cover;

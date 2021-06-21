@@ -88,11 +88,11 @@ const Register = ({RedirectRegister,setRedirectRegister2 , RegisterFunction1,set
     height: 25px; */}
                     <Box   className="flex flex-center  mb-10 TestResposive paddindTopResposive ">
                         <Box >
-                        <Typography data-Aos="fade" variant="p" className="colorBplue Inscipation font-medium 	text-2xl		" >INSCRIPATION</Typography>
+                        <Typography data-Aos="fade" variant="p" className="colorBplue  font-medium 	text-2xl		" >INSCRIPATION</Typography>
                         </Box>
                     </Box>
 
-                <Box data-Aos="fade"  className="Resposive  flex flex-center">
+                <Box data-Aos="fade"  className="  flex flex-center">
                     
                     <Box>
                     <Box>
@@ -107,10 +107,10 @@ const Register = ({RedirectRegister,setRedirectRegister2 , RegisterFunction1,set
                     <input value={Email} onChange={(e)=>setEmail(e.target.value)} data-Aos="fade-left"  placeholder="E-mail" className="bg-white text-center  w-330 pladceholder h-40  mb-8  rounded-full 	"/>
                     </Box>
                     <Box>
-                    <input value={password} onChange={(e)=>setpassword(e.target.value)} data-Aos="fade-left"  placeholder="Mod de pass" className="bg-white text-center w-330 pladceholder h-40  mb-8  rounded-full 	"/>
+                    <input type="password" value={password} onChange={(e)=>setpassword(e.target.value)} data-Aos="fade-left"  placeholder="Mod de pass" className="bg-white text-center w-330 pladceholder h-40  mb-8  rounded-full 	"/>
                     </Box>
                     <Box>
-                    <input value={Confirmpassword} onChange={(e)=>setConfirmPassword(e.target.value)}  data-Aos="fade-left"  placeholder="Confirm password" className="bg-white w-330 text-center pladceholder h-40   rounded-full 	"/>
+                    <input type="password" value={Confirmpassword} onChange={(e)=>setConfirmPassword(e.target.value)}  data-Aos="fade-left"  placeholder="Confirm password" className="bg-white w-330 text-center pladceholder h-40   rounded-full 	"/>
                     </Box>
                     {/* Button */}
                     {console.log(RedirectRegister)}
@@ -139,7 +139,7 @@ const Register = ({RedirectRegister,setRedirectRegister2 , RegisterFunction1,set
                 </Box>
                 <Container>
                 <Box className="flex flex-left bg-red ResposiveWidhtMargin">
-                <Box   className=" absolute  AnimationProgresBar bg-bluelow2 rounded-l-full  mt-40  h-35  ResposiveMarginProgresBar widhtResposive ">
+                <Box   className="  bg-bluelow2 absolute  AnimationProgresBar  rounded-l-full  mt-40  h-35  ResposiveMarginProgresBar widhtResposive03 ">
                 
                 </Box>
                 </Box>

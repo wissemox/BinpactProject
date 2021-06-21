@@ -1,6 +1,12 @@
 /* ml-20 */
 /* NavBar */
 @media screen and (max-width: 8000px){
+    .marginRightReposiveAbosulte{
+        margin-right: 700px;
+    }
+    .marginLeftReposiveAbosulte{
+        margin-left: 700px;
+    }
     .Resposive {
      
      justify-content: center;
@@ -10,6 +16,16 @@
     }
     .marginLeftResposiveSecondeImage{
         margin-left: 22%;
+        
+    }
+    .Mt-RButton{
+        margin-top: 15px;
+    }
+    .ml-20pR{
+        margin-left: 2%;
+    }
+    .mt-50R{
+        margin-top: 60px;
     }
 }
 @media screen and (max-width: 2900px){
@@ -20,7 +36,9 @@
     .Imageol{
         justify-content: center;
     }
-   
+    .ml-20pR{
+        margin-left: 4%;
+    }
     
 
 }
@@ -32,14 +50,35 @@
  .BackgroundImageurl04{
      display: none;
  }
-
+ .ml-20pR{
+     margin-left: 8%;
+ }
+ .mt-50R{
+    margin-top: 0px;
+}
+.marginRightReposiveAbosulte{
+    margin-right: 46%;
+}
+.marginLeftReposiveAbosulte{
+    margin-left: 44%;
+}
 }
 @media screen and (max-width: 1400px){
+    .mt-50R{
+        margin-top: 30px;
+    }
+    .pr-10{
+        padding-right: 0px;
+    }
+    .w-110r{
+        width: 500px;
+    }
     .marginleaftResposive{
         margin-left: 0%;
     }
     .marginLeftResposiveSecondeImage{
         margin-left: 0%;
+       
     }
     .w-250{
         width: 100%;
@@ -66,9 +105,22 @@
         -webkit-transition: 2s;
         width: 950px;
     }
+    .marginRightReposiveAbosulte{
+      
+        margin-right:680px;
+    }
+    .marginLeftReposiveAbosulte{
+        margin-left: 680px;
+    }
  
 }
 @media screen and (max-width: 1300px){
+    .mr-4{
+        margin-right: 50px;
+    }
+  .w-110r {
+    width: 410px;
+  }
     .pr-90{
         -webkit-transition: 2s;
         padding-right: 65px;
@@ -78,10 +130,7 @@
         
         margin-left: 80px;
     }
-    .text-sm{
-        -webkit-transition: 2s;
-        font-size: 10px;
-    }
+ 
     .ml-11p{
         margin-left: 150px;
     }
@@ -107,6 +156,19 @@
     }
 }
 @media screen and (max-width: 1200px){
+    .mr-4{
+        margin-right: 60px;
+    }
+    .ml-8pR{
+        -webkit-transition: 2s;
+        margin-left: 2%;
+    }
+    .text-sm{
+        
+        -webkit-transition: 2s;
+        font-size: 13px;
+      
+    }
     .pr-90{
         -webkit-transition: 2s;
         padding-right: 60px;
@@ -116,12 +178,7 @@
         
         margin-left: 80px;
     }
-    .text-sm{
-        
-        -webkit-transition: 2s;
-        font-size: 10px;
-        width: 900px;
-    }
+  
     .ml-33p{
         -webkit-transition: 2s;
         margin-left: 26%;
@@ -139,6 +196,21 @@
  
 }
 @media screen and (max-width: 1100px){
+  
+    .marginRightReposiveAbosulte{
+          margin-right:650px;
+      }
+      .marginLeftReposiveAbosulte{
+          margin-left: 650px;
+      }
+    .mt-50R{
+        margin-top: 70px;
+        
+    }
+    .w-110r {
+        width: 350px;
+      }
+   
     .pr-90{
         -webkit-transition: 2s;
         padding-right: 50px;
@@ -148,15 +220,24 @@
       
         margin-left: 80px;
     }
+    .ml-8pR{
+        -webkit-transition: 2s;
+
+        margin-left: 3%;
+    }
+    .Mt-RButton{
+        margin-top: 5px;
+    }
     .text-sm{
         
         -webkit-transition: 2s;
-        font-size: 10px;
-        width: 1200px;
+        font-size: 12px;
+      
     }
+   
     .ml-40 {
         -webkit-transition: 2s;
-        margin-left: 40px;
+        margin-left: 45px;
     }
     .imgResposive{
         -webkit-transition: 2s;
@@ -178,8 +259,38 @@
     .w-1000{
         width: 600px;
     }
+    .mt-40R{
+        margin-top: 15px;
+    }
+    .ml-20pR {
+        margin-left: 2%;
+    }
 }
 @media screen and (max-width: 1000px){
+    .mr-4{
+        margin-right: 110px;
+    }
+    .marginRightReposiveAbosulte{
+        margin-right:590px;
+    }
+    .marginLeftReposiveAbosulte{
+        margin-left: 590px;
+    }
+    .text-sm{
+        
+        -webkit-transition: 2s;
+        font-size: 9px;
+      
+    }
+   
+    .ml-8pR {
+        margin-left: 4%;   
+    }
+  
+    .ml-20pR {
+        margin-left: 5%;   
+    }
+   
     .pr-90{
         -webkit-transition: 2s;
         padding-right: 45px;
@@ -194,15 +305,10 @@
         
         margin-left: 30px;
     }
-    .text-sm{
-        
-        -webkit-transition: 2s;
-        font-size: 10px;
-        width: 1200px;
-    }
+   
     .ml-40 {
         -webkit-transition: 2s;
-        margin-left: 40px;
+        margin-left: 0px;
     }
     .imgResposive{
         -webkit-transition: 2s;
@@ -227,6 +333,13 @@
     
 }
 @media screen and (max-width: 950px){
+    .marginRightReposiveAbosulte{
+        margin-right:550px;
+    }
+    .marginLeftReposiveAbosulte{
+        margin-left: 550px;
+    }
+    
     .pr-90{
         -webkit-transition: 2s;
         padding-right: 30px;
@@ -236,15 +349,10 @@
         
         margin-left:20px;
     }
-    .text-sm{
-        
-        -webkit-transition: 2s;
-        font-size: 10px;
-        width: 1200px;
-    }
+    
     .ml-40 {
         -webkit-transition: 2s;
-        margin-left: 10px;
+        margin-left: 0px;
     }
     .imgResposive{
         -webkit-transition: 2s;
@@ -261,9 +369,18 @@
         margin-left: 18%;
     
     }
-    
+    .h-350R{
+        height: 200px;
+    }
 }
 @media screen and (max-width: 900px){
+    
+    .marginRightReposiveAbosulte{
+        margin-right:45%;
+    }
+    .marginLeftReposiveAbosulte{
+        margin-left: 45%;
+    }
     .ResposiveMainPage2{
 
        
@@ -271,6 +388,9 @@
    .MenuResposive{
        display: block;
    }
+   .ml-8pR {
+    margin-left: 7%;   
+}
    .NavBarResposive{
     display:none;
    }
@@ -358,6 +478,8 @@
     
 }
 @media screen and (max-width: 1000px){
+   
+  
     .Resposive{
      
         margin-left: 5%;
@@ -367,6 +489,7 @@
         font-size: 35px;
     }
     .w-1100{
+ 
         -webkit-transition: 2s;
         width: 800px;
     }
@@ -381,16 +504,20 @@
 
     }
     .fontResposive{
-       
-        font-size: 13px;
+        margin-top: 5px;
+        font-size: 14px;
     }
  
     
 }
 @media screen and (max-width: 900px){
     
-    
-   
+    .ResercherResposiveMobile{
+        display: flex;
+    }
+    .HaideResercheBar{
+        display: none;
+    }
     .text-5xl{
         -webkit-transition: 2s;
         font-size: 30px;
@@ -431,7 +558,7 @@
    
 }
 @media screen and (max-width: 800px){
-    
+   
     .Resposive{
        
         margin-left: 10%;
@@ -604,4 +731,14 @@
     flex-wrap: wrap;
 }
 
+}
+
+/* ml-20  ml-8pR  */
+@media screen and (max-width: 440px){
+ .ml-20 {
+     margin-left: 0px;
+ }
+ .ml-8pR {
+     margin-left: 0px;
+ }
 }

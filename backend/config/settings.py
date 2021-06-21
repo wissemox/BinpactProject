@@ -33,7 +33,7 @@ SECRET_KEY ='7d(pq23iy%2w5ou!%1@zj(e1+^u=j!$xwcz@cv+#xk*1&&_i'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG'),
+DEBUG = True
 
 ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(' ')
 

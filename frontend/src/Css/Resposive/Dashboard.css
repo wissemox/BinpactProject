@@ -1,0 +1,523 @@
+/*  .w-1150{
+        width: 60%;
+    } */   
+    /* Backgroundchangehv */
+    @media screen and (max-width: 8000px){
+        
+        .wp-Resposive{
+            width: 250px;
+        }
+        .Backgroundchangehv{
+            height: 100vh;
+        }
+        .marginLeftResposive{
+            -webkit-transition: 2s;
+
+            margin-left: 22%;
+        }
+        .MarginLeftProduct{
+            margin-left: 6%;
+        }
+        .widht800{
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: 6000px){
+        .MarginLeftProduct{
+            margin-left: 5%;
+            margin-right: 100px;
+        }
+        .Backgroundchangehv{
+            height: 100vh;
+        }
+        .marginLeftResposive{
+            margin-left: 19%;
+        }
+
+    }
+    @media screen and (max-width: 3500px){
+        
+        .MarginLeftProduct{
+            margin-left: 6%;
+        }
+        .Backgroundchangehv{
+            height: 100vh;
+        }
+        .marginLeftResposive{
+            margin-left: 14%;
+        }
+
+    }
+    @media screen and (max-width: 3000px){
+        
+        .marginLeftResposive{
+            -webkit-transition: 2s;
+
+            margin-left: 9%;
+        }
+        .Backgroundchangehv{
+            height: 100vh;
+        }
+       
+        .MarginLeftProduct{
+            margin-left: 6%;
+        }
+    }
+    @media screen and (max-width: 2000px){
+       
+        .marginLeftResposive{
+          
+
+            -webkit-transition: 2s;
+
+            margin-left:6%;
+        }
+        .Backgroundchangehv{
+            height: 100vh;
+        }
+   
+      }
+      @media screen and (max-width: 1900px){ 
+        .mb-40{
+            margin-bottom: 150px;
+        }
+        .MarginLeftProduct{
+            margin-left: 10%;
+          
+        }
+          .Backgroundchangehv{
+            height: 100%;
+        }
+       
+      }
+
+    @media screen and (max-width: 1600px){
+      
+        .widht800{
+            width: 100%;
+        }
+        .MarginLeftProduct{
+            
+            margin-left: 5%;
+          
+        }
+        .Backgroundchangehv{
+            height: 100%;
+        }
+      .marginLeftResposive{
+        -webkit-transition: 2s;
+
+        margin-left: 5px;
+    }
+
+    }
+  
+    @media screen and (max-width: 1400px){
+        .widhtPrestange{
+            width: 90%;
+        }
+        .w-1150{
+            width: 60%;
+        
+        }
+     
+    }
+  
+@media screen and (max-width: 1000px){
+  
+   
+  
+   .widhtRedsposive{
+    -webkit-transition: 2s;
+
+    width: 0%;
+}
+.fontsizedqsx{
+    -webkit-transition: 2s;
+
+    font-size: 10px;
+}
+
+}
+/*  */
+    @media screen and (max-width: 1100px){
+      
+        .marginLeftResposiveIcon{
+            margin-left:200px;
+            
+        }
+        .marginLeftResposive{
+            margin-left: 5%;
+           
+          
+        }
+      
+    
+        .ResposivedisplaynoneImage{
+            -webkit-transition: 2s;
+    
+            display: none;
+        }
+      
+      
+     }
+@media screen and (max-width: 1300px){
+    .widhtPrestange{
+        width: 70%;
+    }
+    
+    .marginLeftResposive{
+        margin-left:10%;
+       
+      
+    }
+    .displayHidenNavbar{
+        -webkit-transition: 2s;
+
+        display: none;
+    }
+    .HeadenNavbar{
+        display: none;
+    }
+    .displayHidenNavbar01{
+        -webkit-transition: 2s;
+
+        display: flex;
+    }
+  
+    .ResposiveHeaiden{
+
+        -webkit-transition: 2s;
+
+        display: none;
+    }
+    
+  
+    .Resposnivesw{
+        display: flex;
+    }
+    .marginLeaftResposived{
+        margin-left: 40px;
+    }
+ }
+ 
+ @media screen and (max-width: 900px){
+    .marginLeaftResposived{
+        margin-left: 200px;
+        }
+    .wp-Resposive{
+      width: 400px;
+    }
+    .pl-4 {
+        padding-left: 210px;
+    }
+  
+     .MarginLeftRepsoiveProductFevoire{
+         margin-left: 50px;
+     }
+     .WidhtResposinvePrestage{
+         width: 70%;
+         margin-bottom: 20px;
+     }
+    .ProductFevoiret{
+      flex-direction: column;
+    }
+    .marginLeftResposive{
+        margin-left: 0%;
+        margin-right: 10%;
+      
+    }
+  
+    .marginRight{
+        -webkit-transition: 2s;
+
+        margin-right: 200px;
+        
+    }
+    .marginLeaftResposive{
+       
+       
+    }
+    .Resposnivesw{
+        -webkit-transition: 2s;
+
+        display: flex;
+    }
+    .marginLeaftLogo{
+        -webkit-transition: 2s;
+
+        margin-left: 10px;
+    }
+ }
+ /* margin */
+ @media screen and (max-width: 800px){
+    .widhtPrestange{
+        width: 50%;
+    }
+    .marginLeaftResposived{
+        margin-left: 10px;
+        }
+     .pl-4{
+         padding-left: 180px;
+     }
+     .wp-Resposive{
+         width: 600px;
+     }
+     .MarginLeftProduct{
+        -webkit-transition: 2s;
+
+         margin-left: 4%;
+     }
+    .widht800{
+        width: 570px;
+    }
+    .marginLeftResposiveIcon{
+        margin-left:200px;
+        
+    }
+     .f-40{
+         padding-top: 4px;
+         padding-left: 2px;
+         font-size: 30px;
+     }
+    .marginLeftResposive{
+        margin-left: 0%;
+        margin-right: 10%;
+      
+    }
+  
+     .marginLeftDashboard{
+         margin-left: 50px;
+     }
+    .ResposivedisplaynoneImage{
+        -webkit-transition: 2s;
+
+        display: none;
+    }
+    .FLexWrapWrap{
+        flex-direction: column;
+    }
+    .marginRight{
+        -webkit-transition: 2s;
+
+        margin-right: 50px;
+        
+    }
+    .marginLeaftResposive{
+        -webkit-transition: 2s;
+
+        margin-left: 0px;
+    }
+    .marginLeaftLogo{
+        -webkit-transition: 2s;
+
+        margin-left: 20px;
+    }
+.widhtResposive{
+    -webkit-transition: 2s;
+
+    width: 20px;
+}
+   .w-Dashboard{
+       width: 280px;
+   }
+
+}
+/*    .marginTopResposive{
+        margin-top: 5px;
+        margin-right: 40px;
+    } */
+ @media screen and (max-width:768) {
+   
+ }
+ @media screen and (max-width: 700px){
+     .MarginLeftRepsoiveFevoireProduct{
+         margin-left: 40px;
+     }
+    .wp-Resposive{
+        width: 100%;
+    }
+     .widht800{
+         width: 50%;
+     }
+    .marginLeftResposiveIcon{
+        margin-left:0px;
+        
+    }
+   
+     .w-Dashboard{
+         width: 250px;
+     }
+    .wh-60{
+ 
+        width: 40px;
+        height: 40px;
+    }
+    .f-40{
+       
+        font-size: 25px;
+    }
+    .marginLeftResposive{
+        margin-left: 5%;
+        margin-right: 5%;
+      
+    }
+ 
+    .ResposivedisplaynoneImage{
+        -webkit-transition: 2s;
+
+        display: none;
+    }
+    .marginRight{
+        margin-right: 10px;
+        
+    }
+   
+    .w-60 {
+    
+        width: 40px;
+        height: 40px;
+    }
+    .marginTopResposive{
+        margin-top: 5px;
+       
+    }
+    .marginLeaftLogo{
+        -webkit-transition: 2s;
+
+        margin-left: 0px;
+    }
+    .pl-4{
+        padding-left: 50px;
+    }
+    .MarginLeftProduct{
+        margin-left: 80px;
+    }
+ }
+ @media screen and (max-width: 700px){
+   
+   .MarginLeftProduct{
+       margin-left: 40px;
+      
+   }
+   .MarginLefrReposniveProduuct300px{
+       margin-left: 40px;
+   }
+  
+}
+
+ /* displayHidenNavbar01 */
+/* f-40 */
+@media screen and (max-width: 450px){
+    
+    .MarginLeftRepsoiveFevoireProduct{
+        margin-left: 22px;
+    }
+    .w-Dashboard{
+        width: 200px;
+    }
+    .ResposiveSmartphoneiphone{
+        display: flex;
+    }
+  .ResposiveSmartphone{
+      display: none;
+  }
+.displayHidenNavbar01{
+    display: none;
+}
+.wp-20 {
+    width: 0%;
+}
+.marginLeaftResposived{
+    margin-left: 2px;
+}
+.ml-9{
+    margin-left: 0px;
+}
+.MarginLeftProduct{
+    margin-left: 10px;
+}
+}
+@media screen and (max-width: 385px){
+    .FlexNone300Repsoive{
+        display: none;
+    }
+  
+    
+}
+/* pt-2 */
+/* .FlexNone300Repsoive{
+        display: none;
+    } */
+@media screen and (max-width: 360px){
+    .pl-4{
+        padding-left: 20px;
+    }
+   
+    .pt-2 {
+    padding-top: 0px;
+    }
+    
+   .wh-60{
+       width: 35px;
+       height: 35px;
+   }
+  
+   .marginTopResposive{
+       padding-top: 1px;
+       margin-top: 10px;
+   }
+   .bg-gray-50{
+       background-color: white;
+   }
+   .MarginLeftRepsoiveFevoireProduct{
+       margin-left: 0px;
+   }
+   .w-400{
+       width: 100%;
+   }
+}
+
+@media screen and (max-width: 320px){
+    .wh-60{
+        width: 25px;
+        height: 25px;
+    }
+    .MarginLeftProduct{
+        margin-left: 10px;
+        
+    }
+    .marginTopResposive{
+        padding-top: 1px;
+        margin-top: 5px;
+    }
+    .wp-Resposive{
+        width: 90%;
+    }
+    .FlexRespoive{
+        flex-direction: column;
+    }
+    .pl-4{
+        padding-left: 0px;
+    }
+    .FlexNone300Repsoive{
+        display: none;
+    }
+ }
+
+ @media screen and (max-width: 290px){
+   .MarginLeftRepsoiveFevoireProduct{
+       margin-left: 0px;
+   }
+  
+}
+
+@media screen and (max-width: 8000px){
+    .widhtRedsposive{
+        -webkit-transition: 2s;
+
+        width: 40%;
+    }
+ 
+ 
+ }

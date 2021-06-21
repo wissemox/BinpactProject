@@ -11,6 +11,7 @@ import Buyers from './Buyers'
 import Map from './Map'
 import Contact from './Contact/Contact'
 import {Route , BrowserRouter } from 'react-router-dom'
+import Fotter from './Fotter'
 
 const Home = () => {
   
@@ -26,8 +27,7 @@ const Home = () => {
             <Route exact path="/" render={()=><EssayezBinpact />  } />
             <Route exact path="/" render={()=><Buyers/>  } />
             <Route exact path="/" render={()=><Map/> } />
-          
-         
+            <Route exact path="/" render={()=><Fotter/> } />
         </BrowserRouter>
         {/* Update */}
         {/* <EssayezBinpact />

@@ -13,6 +13,22 @@
 .mt-20{
     margin-top: 20px;
 }
+/* Mt-r minig Resposive */
+.mt-40R{
+    margin-top: 25px;
+}
+/* Ml-pr mainig prenctage resposive */
+.ml-20pR{
+    margin-left: 8%;
+}
+.ml-8pR{
+    margin-left: 0%;
+    margin-right: 2%;
+}
+/* ReposiveButotn */
+.Mt-RButton{
+    margin-top: 1%;
+}
 .mt-40{
     margin-top: 40px;
 }
@@ -224,7 +240,7 @@
 .ml-360{
     margin-left: 360px;
 }
-.ml-30p{
+.mll-30p{
     margin-left: 30%;
 }
 .ml-20p{
@@ -232,6 +248,9 @@
 }
 .mr-10p{
     margin-right: 10%;
+}
+.mr-2p{
+    margin-right: 2%;
 }
 .mr-20p{
     margin-right: 20%;
@@ -267,4 +286,18 @@
 
 .ResposinveImage{
     margin-left: 20%;
+}
+.mb-40R{
+    margin-bottom: 40px;
+}
+.mt-50R{
+    margin-top: 50px;
+}
+
+/* Presnolise Margin */
+.marginRightReposiveAbosulte{
+    margin-right: 45%;
+}
+.marginLeftReposiveAbosulte{
+    margin-left: 45%;
 }

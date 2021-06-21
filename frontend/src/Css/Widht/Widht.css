@@ -15,12 +15,16 @@
 .w-70{
     width: 70px;
 }
+.w-45{
+    width: 45px;
+}
 .w-60{
     width: 60px;
 }
 .w-190{
     width: 190px;
 }
+
 .w-100{
     width: 100px;
 }
@@ -85,6 +89,9 @@
 .wp-20{
     width: 20%;
 }
+.w-60{
+    width: 60px;
+}
 .wp-30{
     width: 30%;
 }
@@ -112,3 +119,15 @@
     width: 100%;
 }
 
+/* RespoiveWidht */
+.w-110r {
+    width: 105px;
+}
+
+.wh-60 {
+    width: 50px;
+    height: 50px;
+}
+.w-1150{
+    width: 1150px;
+}

@@ -5,6 +5,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import {Parallax} from 'react-parallax'
 import Aos from 'aos'
 import "aos/dist/aos.css"
+import {Link} from 'react-router-dom'
 const MainPage = () => {
     
     useEffect(() => {
@@ -27,7 +28,7 @@ const MainPage = () => {
 ])
     const changeBackground =()=>{
      
-        if(window.scrollY>200){
+        if(window.scrollY>20){
             setScroll(true)
         }else{
             setScroll(false)
@@ -70,26 +71,29 @@ const MainPage = () => {
     {console.log(CommentCaMarche)}
     return (
         <>
-        <Parallax className="ParallaxResposive1400widht"  bgImage={"Untitled-2.jpg"} strength={60}> 
+        <Parallax  className="ParallaxResposive1400widht "  bgImage={"Untitled-2.jpg"} strength={60}> 
         <Box className="w-15  	h-900 ">
            
                 {/* NavBar */}
-                   <AppBar data-aos="fade" style={{backgroundColor:"transparent",boxShadow:"none"}} position={`${Scroll&&"fixed"}`} className={`${Scroll && "AnimaiionNavbarSticky"} ${Scroll && "bg-white"}  `}>
-                    {!Menu && <>  <Box data-aos="fade" className="flex  ml-20 pt-10 flex-center  ">
+                <AppBar data-aos="fade" style={{backgroundColor:"transparent",boxShadow:"none"}} position={`${Scroll&&"fixed"}`} className={`${Scroll && "AnimaiionNavbarSticky"} ${Scroll && "bg-white"}  `}>
+                    {!Menu && <>  <Box data-aos="fade" className="flex ml-8pR  pt-10 flex-center  ">
                         <Box>
-                        {!Scroll ?     <img  className="w-190 imgResposive"   src="Binpactwhite.png"/> :  <img  className="w-190 imgResposive"   src="binpact002.png"/>}
+                            {!Scroll ?     <img  className="w-190 imgResposive"   src="binpact002.png"/> :  <img  className="w-190 imgResposive"   src="binpact002.png"/>}
                         </Box>
-                        <Box className={`mt-20 ml-40 flex text-sm NavBarResposive  ${Scroll ?"text-gray-500	":"text-white"}  `}>
-                        <Typography style={{color:Acceuil&&Scroll&&"#F1898C"}} data-aos="fade" variant="p" className="pr-40">ACCEUIL</Typography>
-                        <Typography style={{color:Scroll&&!Acceuil&&CommentCaMarche&&"#F1898C"}} data-aos="fade"  variant="p" className="pr-40">COMMENT CA MARCHE ? </Typography>
-                        <Typography style={{color:Scroll&&!Acceuil&&!CommentCaMarche&&PourqoiBinpact&&"#F1898C"}}  data-aos="fade" variant="p" className="pr-40">POURQOI BINPACT ?</Typography>
-                        <Typography data-aos="fade" variant="p" className="pr-40">CATEGORIES</Typography>
-                        <Typography data-aos="fade" variant="p" className="pr-40">COMMUNAUTES</Typography>
-                    
+                        <Box className={`mt-40R  ml-20pR flex text-sm NavBarResposive  ${Scroll ?"text-gray-500	":"text-white"}  `}>
+                            <Typography style={{color:Acceuil&&Scroll&&"#F1898C"}} data-aos="fade" variant="p" className="pr-40">ACCEUIL</Typography>
+                            <Typography style={{color:Scroll&&!Acceuil&&CommentCaMarche&&"#F1898C"}} data-aos="fade"  variant="p" className="pr-40">COMMUNAUTES</Typography>
+                            <Typography style={{color:Scroll&&!Acceuil&&!CommentCaMarche&&PourqoiBinpact&&"#F1898C"}}  data-aos="fade" variant="p" className="pr-40">POURQOI BINPACT ?</Typography>
+                            <Typography data-aos="fade" variant="p" className="pr-40">QUI SOMMES NOUS</Typography>
+                          
                         </Box>
-                        <Box style={{width:"80%"}} className="hidden flex  mt-3	   MenuResposive  text-left">
+                     
+                            <Box  className="Mt-RButton NavBarResposive text-sm   ">
+                             <Button style={{color:"white" , backgroundColor:"#C01526" ,borderRadius:"20px"}} data-aos="fade" variant="p" className="pr-40  "><a className="no-underline text-white	" href="http://localhost:3000/Register"><Typography className="text-sm " variant="p">SE CONNECTER</Typography></a></Button> 
+                            </Box>
+                        <Box  className="hidden flex  mt-3 wp-80	   MenuResposive  text-left">
                        
-                       <MenuIcon onClick={()=>setMenud(!Menu)} style={{marginLeft:"80%"}} className={`${Scroll ?"text-gray-500	":"text-white"} `}/>
+                             <MenuIcon onClick={()=>setMenud(!Menu)} style={{marginLeft:"80%"}} className={`${Scroll ?"text-gray-500	":"text-white"} `}/>
                        
                   
                      
@@ -102,7 +106,7 @@ const MainPage = () => {
                         {Menu&&
                          <AppBar  boxShadow={5} position="fixed"  className={`bg-gray-100 bg-white  ${Menu && "AnimaiionNavbarSticky"} `} >
                                 <Box className="flex flex-center mt-2">
-                                <Box className="wp-50 mt-1 ml-4">
+                                <Box className="wp-50 mt-1 ml-10">
                                 <img className="w-190 imgResposive" src="binpact002.png"/>
                                 </Box>
                                 <Box className="wp-50 mt-4" >
@@ -139,21 +143,19 @@ const MainPage = () => {
                      {!Menu && <>
                         <Box className="ml-3p">
                             
-                                <Box  className="tracking-widest ml-40 wp-100  mr-40 mt-180">
+                                <Box  className="tracking-widest  wp-100  mr-40 mt-180">
                                     <Box  data-aos="fade-down-left"  className="flex">
-                                        <h3   variant="h3" className="pr-40 font-medium tracking-widest leading-snug  ml-3p text-5xl text-white">Troquez des produits de qualité
+                                        <h3    className="  tracking-widest leading-snug   text-5xl text-white">Troquez des produits de qualité
                                         dans une communuté engagée</h3>
                                     </Box>
                                 </Box>
               
                             {/* Descraption */}
-                                  <Box data-aos="fade-left"  className=" ml-20 text-white wp-70	">
+                                  <Box data-aos="fade-left"  className=" text-white wp-70	">
                                     <p>Des Produits verifiés et validés par nos
                                     experts! offre spéciale lancement , limtée 
                                     aux 2000 premiers inscris</p>
-                                    <Box className="mt-8">
-                                    <Button className="rounded-full h-11  ButtonAnimation"  style={{backgroundColor:"#F1898C" , borderRadius:"20px",color:"white"}}>Bloquez vote place maintence</Button>
-                                    </Box>
+                                  
                             </Box>
                             {/* Mobile resposive show reserche bar */} 
                            {/* style={{justifyContent:"flex-end"}}  */}
@@ -170,26 +172,26 @@ const MainPage = () => {
                             </Box>
                          
                              </Box>
-                        <Box boxShadow={2} className=" rounded-full  HaideResercheBar	mt-12 flex opacity-90	  bg-white">
+                        <Box style={{width:"91%"}} boxShadow={2} className=" rounded-full  HaideResercheBar	mt-12 flex opacity-90 ml-9 bg-white">
                             <Box style={{height:"30px" , justifyContent:"start" , marginTop:"2%"}} className={`   ${active ?"hidden":"flex"} `}>
                                 <Box className="ml-5 fontResposive flex paddinTopResposive"  >
                                 <Box className="mt-1">
-                                <Typography className="pr-90" variant="p">Categories</Typography>
+                                <Typography className="pr-10 w-250   text-center " variant="p">Categories</Typography>
                                 </Box>
-                                <Box className="mt-1">
-                                <Typography className="pr-90" variant="p">Sous catégorie</Typography>
+                                <Box className="pr-10 mt-1 w-250   text-center	" >
+                                <Typography  variant="p">Sous catégorie</Typography>
                                 </Box>
-                                <Box className="mt-1">
-                                <Typography className="pr-90" variant="p">Ville</Typography> 
+                                <Box className="pr-10  mt-1   text-center " >
+                                <Typography variant="p">Ville</Typography> 
+                                </Box> 
+                                <Box  className="pr-10 mt-1 w-250   text-center">
+                                <Typography  variant="p">Prix en binz</Typography>
                                 </Box>
-                                <Box className="mt-1">
-                                <Typography className="pr-90" variant="p">Prix en binz</Typography>
-                                </Box>
-                                <Box className="mt-1">
-                                <Typography className="pr-90" variant="p">Rating user</Typography>
+                                <Box className="pr-10 mt-1 w-110r   text-center ">
+                                <Typography  variant="p">Rating user</Typography>
                                 </Box >
-                                <Box className="mt-1">
-                                <Typography className="pr-90" variant="p"> Catactéristique</Typography> 
+                                <Box className="pr-10  mt-1 w-250   text-center ">
+                                <Typography  variant="p"> Catactéristique</Typography> 
                                 </Box>
                                 </Box>
                             </Box>
@@ -209,26 +211,26 @@ const MainPage = () => {
                                     
                                    </Box>
                                 <Box className="flex	rounded-r-full	">
-                                    <Box className="mt-1 pl-4 pt-2">
-                                    <Typography className="pr-90" variant="p">Sous catégorie</Typography>
+                                    <Box className="mt-20" >
+                                    <Typography className="pr-60 pl-10" variant="p">Sous catégorie</Typography>
                                     </Box>
-                                    <Box className="mt-1 pl-4 pt-2">
-                                    <Typography className="pr-90" variant="p">Ville</Typography> 
+                                    <Box className="mt-20"  >
+                                    <Typography className="pr-60" variant="p">Ville</Typography> 
                                     </Box>
-                                    <Box className="mt-1 pl-4 pt-2">
-                                    <Typography className="pr-90" variant="p">Prix en binz</Typography>
+                                    <Box className="mt-20">
+                                    <Typography className="pr-60" variant="p">Prix en binz</Typography>
                                     </Box>
-                                    <Box className="mt-1 pl-4 pt-2">
-                                    <Typography className="pr-90" variant="p">Rating user</Typography>
+                                    <Box className="mt-20">
+                                    <Typography className="pr-60" variant="p">Rating user</Typography>
                                     </Box >
-                                    <Box className="mt-1 pl-4 pt-2">
-                                    <Typography className="pr-90" variant="p"> Catactéristique</Typography> 
+                                    <Box className="mt-20">
+                                    <Typography className="pr-60" variant="p"> Catactéristique</Typography> 
                                     </Box>
                                     </Box>
                                 </Box>
                             </Box>
                         
-                            <Box   onClick={()=>setactive(!active)} className={`bg-red rounded-full h-12 w-12 mt-3 mb-2 justify-center	  ${active ? "Animationlogo" : "Animationlogo02"}`} > 
+                            <Box   onClick={()=>setactive(!active)} className={`bg-red rounded-full h-12 w-12 mt-3 mb-2 justify-center mr-4	  ${active ? "Animationlogo" : "Animationlogo02"}`} > 
                             <img className="w-15 h-10 ml-1 mr-10 mt-1" src="TESt05zd.png"/>
                             </Box>
                      
@@ -260,23 +262,23 @@ const MainPage = () => {
     <Container>
         {/* NavBar */}
             <AppBar data-aos="fade" style={{backgroundColor:"transparent",boxShadow:"none"}} position={`${Scroll&&"fixed"}`} className={`${Scroll && "AnimaiionNavbarSticky"} ${Scroll && "bg-white"}  `}>
-            <Box  className="flex  ml-20 pt-10 ">
-            {!Scroll ?     <img  className="w-190 imgResposive"   src="Binpactwhite.png"/> :  <img  className="w-190 imgResposive"   src="binpact002.png"/>}
+            <Box  className="flex  ml-4 pt-10 ">
+            {!Scroll ?     <img  className="w-190  imgResposive"   src="binpact002.png"/> :  <img  className="w-190 imgResposive"   src="binpact002.png"/>}
            
          
             <Box className="mt-20 ml-40 flex text-sm NavBarResposive  text-white  		">
-            <Typography variant="p" className="pr-40">ACCEUIL</Typography>
-            <Typography  variant="p" className="pr-40">COMMENT CA MARCHE ? </Typography>
-            <Typography variant="p" className="pr-40">POURQOI BINPACT ?</Typography>
-            <Typography variant="p" className="pr-40">CATEGORIES</Typography>
-            <Typography variant="p" className="pr-40">COMMUNAUTES</Typography>
+            <Typography variant="p" className="pr-40">accueil</Typography>
+            <Typography  variant="p" className="pr-40">pourquoi Binpac</Typography>
+            <Typography variant="p" className="pr-40">Communautés</Typography>
+            <Typography variant="p" className="pr-40">qui sommes nous</Typography>
+            <Typography variant="p" className="pr-40">se connecter</Typography>
            
             </Box>
            
                             
-            <Box    style={{width:"100%"}} className="hidden flex 	   MenuResposive  text-left">
+            <Box    style={{width:"100%"}} className="hidden flex  	   MenuResposive  text-left">
                
-                <MenuIcon   onClick={()=>setMenud(!Menu)} style={{marginLeft:"80%"}} className={`${Scroll ?"text-gray-500	":"text-white"}`}/>
+                <MenuIcon   onClick={()=>setMenud(!Menu)} style={{marginLeft:"75%" , marginTop:"10px"}} className={`${Scroll ?"text-gray-500	":"text-white"}`}/>
                 
            
               
@@ -286,7 +288,7 @@ const MainPage = () => {
             </AppBar>
             {Menu&&
                          <AppBar  boxShadow={5} position="fixed"  className={`bg-gray-100 bg-white  ${Menu && "AnimaiionNavbarSticky"} `} >
-                                <Box className="flex flex-center mt-2">
+                                <Box className="flex flex-center mt-4">
                                 <Box className="wp-50 mt-1 ml-4">
                                 <img className="w-190 imgResposive" src="binpact002.png"/>
                                 </Box>

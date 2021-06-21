@@ -39,11 +39,11 @@ const Nouveaute = () => {
       },]
     return (
         <Box className="m-100">
-            <Box data-aos="zoom-in" className="mt-10 mb-10 ResposiveText text-center 	">
+            <Box style={{marginTop:"100px" , marginBottom:"100px"}} data-aos="zoom-in" className=" ResposiveText text-center 	">
                 <Typography  className="colorBlue text-3xl ResposiveText font-medium" variant="p">Les nouveautés</Typography>
              </Box>
              <Container data-aos="zoom-in"  className=" flex-center  ">
-            <Carousel   breakPoints={breakPoints}>
+            <Carousel className="px-10"   breakPoints={breakPoints}>
             {Array.map((el)=><CarouselMap el={el}/>)}
             </Carousel>
             </Container>

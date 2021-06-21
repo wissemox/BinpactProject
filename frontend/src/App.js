@@ -18,6 +18,8 @@ import './Css/Animation/NavbarAnimation.css'
 import './Css/JustifyContent/JustifyContent.css'
 import './Css/Dashmaincss/Dashmaincss.css'
 import Contact from './Compent/Home/Contact/Contact'
+import './Css/Resposive/Dashboard.css'
+import Dashboard from './Compent/Dashboard/DashboardMain'
 // Import Router 
 import {Route , BrowserRouter } from 'react-router-dom'
 //Compe Imported 
@@ -44,11 +46,14 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      
       {/* Register */}
       <Route exact path="/Register" render={()=><Register setRedirectRegister2={setRedirectRegister2} setRedirectRegister={setRedirectRegister} RedirectRegister={RedirectRegister} RegisterFunction1={RegisterFunction1} RegisterFunction2={RegisterFunction2} RedirectRegister2={RedirectRegister2}/> } />
       {/* HomePage */}
       <Route exact path="/" render={()=>  <Home/>}></Route>
-     
+     {/* Dashboard */}
+    
+     <Route  path="/Dashboard" component={Dashboard}/>
       </BrowserRouter>
 
     </div>

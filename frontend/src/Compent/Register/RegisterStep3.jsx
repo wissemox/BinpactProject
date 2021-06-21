@@ -85,9 +85,7 @@ const RegisterStep3 = ({setRedirectRegister2}) => {
                     {/* ml-80 */}
                     <Container>
                     <Box className="flex flex-left "> 
-                        <Box  className="ml-40">
-                        <Typography  className="colorBplue" variant="p">25% Accompli..</Typography>
-                        </Box>
+                       
                     </Box>
                     </Container>
                 </Box>

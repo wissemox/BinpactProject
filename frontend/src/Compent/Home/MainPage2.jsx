@@ -89,7 +89,9 @@ const MainPage2 = () => {
                                     </Box>
                                     </Box> 
                             </Box>  
+                            
                          </Box>
+                         
                         </Box>
                     </Box>
             </Container>

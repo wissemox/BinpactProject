@@ -32,7 +32,9 @@ code {
 .f-18{
   font-size: 18px;
 }
-
+.f-40{
+  font-size: 40px;
+}
 /* Color */
 .colorBplue{
   color: #3E6993;
@@ -99,6 +101,13 @@ code {
   
 }
 .Sticky{
-  position: fixed;
-  top: 0;
+  position: sticky; top: 0px; 
 }
+
+.StickyLeft{
+  position: fixed;
+  left: 0;
+}
+/* .heaightVh{
+  height: calc(100% - 100px);
+} */

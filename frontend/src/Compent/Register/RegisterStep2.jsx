@@ -69,10 +69,10 @@ const RegisterStep2 = ({setRedirectRegister , RegisterFunction2,RedirectRegister
                         {/* COmmunite */}
                         <Box className="flex w-330 bg-white mb-8 h-12 Animation   rounded-full">
                         <Box  style={{backgroundColor:BackGroundChange&&"#1C2D4F",color:BackGroundChange&&"white"}} className="rounded-l-full" onClick={SwitchBackGroundValue01} >
-                        <p className="w-165   	 pt-3   text-center"><ModalComunite setCommunte={setCommunte} Communte={Communte} BackGroundChange={BackGroundChange}/></p> 
+                        <p style={{paddingTop:"14px"}} className="w-165   	    text-center"><ModalComunite setCommunte={setCommunte} Communte={Communte} BackGroundChange={BackGroundChange}/></p> 
                         </Box>
                         <Box onClick={SwitchBackGroundValue} className="rounded-r-full " style={{backgroundColor:!BackGroundChange&&"#1C2D4F",color:!BackGroundChange&&"#f4f4f4"}}>
-                        <p  className="w-165  pt-3 f-16 	font-semibold	 text-center">Leader</p>
+                        <p style={{paddingTop:"10px"}} className="w-165  f-16 	font-semibold	 text-center">Leader</p>
                         </Box>
                         </Box>
                         <Box>
@@ -114,9 +114,7 @@ const RegisterStep2 = ({setRedirectRegister , RegisterFunction2,RedirectRegister
                     {/* ml-80 */}
                     <Container>
                     <Box className="flex flex-left "> 
-                        <Box  className="ml-40">
-                        <Typography  className="colorBplue" variant="p">25% Accompli..</Typography>
-                        </Box>
+                        
                     </Box>
                     </Container>
                 </Box>
