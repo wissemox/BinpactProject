@@ -13,7 +13,7 @@ const ModalComunite = ({BackGroundChange,setCommunte ,Communte}) => {
   }
   return (
     <div>
-      <h5 className="text-sm	" onClick={toggle}> Member </h5>
+      <h5 style={{fontSize:"14px"}}className="	font-semibold	" onClick={toggle}> Member </h5>
       <Modal isOpen={modal} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }}
         toggle={toggle} >
            {console.log(ComunteAll)}

@@ -1,13 +1,16 @@
 from django.contrib import admin
 from django.db import models
-from .models import Produit, Image, Categorie, SousCategorie, Caracteristique, CaracteristiqueProduit
+from .models import Produit, Image, Categorie, SousCategorie, Caracteristique, CaracteristiqueProduit, ProduitsSignalé
 from django.contrib.admin.helpers import ActionForm
 from django import forms
 from authentification.utils import Util
 from datetime import timedelta, date
+from django.utils.html import format_html
+from django.shortcuts import render
 from django_better_admin_arrayfield.admin.mixins import DynamicArrayMixin
 from django_better_admin_arrayfield.forms.widgets import DynamicArrayTextareaWidget
 from django_better_admin_arrayfield.models.fields import DynamicArrayField
+
 
 
 
@@ -40,7 +43,7 @@ class ProduitAdmin(admin.ModelAdmin):
         'prix_en_euros',
         'prix_en_bins',
         'categorie','sous_categorie',
-        'description','quantite','owner','status')
+        'description','quantite','owner','status','created_at')
     fields = (
     'nom',
     'prix_en_euros',
@@ -48,6 +51,9 @@ class ProduitAdmin(admin.ModelAdmin):
     'categorie',
     'sous_categorie',
     'description','quantite','owner','status') 
+    ordering = ['-created_at']
+    search_fields = ('nom','owner__email')
+    list_filter = ('categorie', 'sous_categorie', 'status',)
     actions = ['publish_product', 'unpublish_product']
     action_form = PublishActionForm
 
@@ -69,11 +75,35 @@ class ProduitAdmin(admin.ModelAdmin):
         queryset.update(status = 'published')        
 
 
+class ProduitsSignaléAdmin(admin.ModelAdmin):
+    
+    ordering = ['-reported_at']
+    list_display = ('produit', 'reason', 'reported_at')
 
+class ImageAdmin(admin.ModelAdmin):
+
+    list_display = ('produit', 'image','image_tag')
+    actions = ['show_images']
+
+    def show_images(self, request, queryset):
+
+        return render(request, 'admin/show_image.html', context={'photos':queryset})  
+
+
+
+
+    
+
+
+
+    
+
+       
 
 admin.site.register(Produit, ProduitAdmin)
-admin.site.register(Image)
+admin.site.register(Image, ImageAdmin)
 admin.site.register(Categorie, CategorieAdmin)
 admin.site.register(SousCategorie,SousCategorieAdmin)
 admin.site.register(Caracteristique, CaracteristiqueAdmin)
+admin.site.register(ProduitsSignalé, ProduitsSignaléAdmin)
 #admin.site.register(CaracteristiqueProduit) # it should be deleted 

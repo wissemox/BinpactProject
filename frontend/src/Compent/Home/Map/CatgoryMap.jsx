@@ -5,7 +5,7 @@ const CatgoryMap = ({el}) => {
     return (
      
             <Box  boxShadow={5} style={{width:"250px" , height:"300px"}} className="mr-10 mt-10">
-                <Box className="mb-20 mt-12 ml-10">
+                <Box className="mb-20 mt-12 ml-11">
                 <img  className="w-150 h-150" src={`${el.Img}`}/>
                 </Box>
                 <Box >

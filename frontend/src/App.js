@@ -16,6 +16,8 @@ import Home from './Compent/Home/Home.jsx'
 import './Css/Animation/Menu.css'
 import './Css/Animation/NavbarAnimation.css'
 import './Css/JustifyContent/JustifyContent.css'
+import './Css/Dashmaincss/Dashmaincss.css'
+import Contact from './Compent/Home/Contact/Contact'
 // Import Router 
 import {Route , BrowserRouter } from 'react-router-dom'
 //Compe Imported 

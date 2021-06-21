@@ -4,6 +4,9 @@ from safedelete.models import SafeDeleteModel, SOFT_DELETE_CASCADE
 from django.utils.text import slugify
 import string
 import random
+#from sorl.thumbnail import get_thumbnail
+#from django.utils.html import format_html
+from django.utils.safestring import mark_safe
 from django_better_admin_arrayfield.models.fields import ArrayField
 
 
@@ -49,7 +52,10 @@ class Produit(SafeDeleteModel):
     updated_at = models.DateTimeField(auto_now=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE) 
     slug = models.SlugField(max_length=250,null=False, unique=True) 
-                       
+
+    def __str__(self):
+        return self.nom
+
     class Meta:
         app_label = 'gestionDeProduits'
         managed = True
@@ -63,6 +69,15 @@ class Produit(SafeDeleteModel):
         self.slug = slugify(rand_slug() + "-" + value)
         super().save(*args, **kwargs)
 
+class ProduitsSignalé(models.Model):
+    
+    produit = models.ForeignKey(Produit,on_delete=models.CASCADE)
+    reason = models.CharField(max_length=255, blank=True, null=True)
+    reported_at = models.DateTimeField(auto_now_add=True)
+
+    
+
+
 
 class Image(SafeDeleteModel):
     _safedelete_policy = SOFT_DELETE_CASCADE
@@ -73,6 +88,13 @@ class Image(SafeDeleteModel):
     class Meta:
         app_label = 'gestionDeProduits'
         managed = True 
+    
+    def image_tag(self):
+        if self.image:
+            return mark_safe('<img src="%s" style="width: 100px; height:100px;" />' % self.image.url)
+        else:
+            return 'No Image Found'
+    image_tag.short_description = 'Image'    
 
 
 class Caracteristique(models.Model):

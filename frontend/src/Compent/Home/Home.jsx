@@ -9,18 +9,26 @@ import MainPage2 from './MainPage2.jsx'
 import EssayezBinpact from './EssayezBinpact'
 import Buyers from './Buyers'
 import Map from './Map'
+import Contact from './Contact/Contact'
+import {Route , BrowserRouter } from 'react-router-dom'
+
 const Home = () => {
   
     return (
         <>
-        <MainPage/>
-        <Catgory/>
-        <Nouveaute/>
-         <Commentcamarche/> 
-        <MainPage2/> 
-        <EssayezBinpact />
-        <Buyers/>
-        <Map/>
+        <BrowserRouter>
+          
+            <Route exact path="/" render={()=> <MainPage /> } />
+            <Route exact path="/" render={()=> <Catgory/> } />
+            <Route exact path="/" render={()=> <Nouveaute/> } />
+            <Route exact path="/" render={()=> <Commentcamarche/>  } />
+            <Route exact path="/" render={()=> <MainPage2/>  } />
+            <Route exact path="/" render={()=><EssayezBinpact />  } />
+            <Route exact path="/" render={()=><Buyers/>  } />
+            <Route exact path="/" render={()=><Map/> } />
+          
+         
+        </BrowserRouter>
         {/* Update */}
         {/* <EssayezBinpact />
        

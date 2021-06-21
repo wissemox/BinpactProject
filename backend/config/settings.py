@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'authentification',
     'django_better_admin_arrayfield',
     'django_crontab',
+    'sorl.thumbnail',
 ]
 # The end ban cron job is scheduled to be run at midnight every day
 # delete_unpublished cron job is scheduled to be run  Every day at 1am

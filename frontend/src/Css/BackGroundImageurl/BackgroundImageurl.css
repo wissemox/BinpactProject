@@ -1,17 +1,37 @@
 .BackgroundImageurl{
-    background-image: url('BackGroundImage5.gif');
+    background: url('BackGroundImage5.gif') no-repeat fixed 100% 100%;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .BackgroundImageurl01{
-    background-image: url('BackGround06.gif');
+    background: url('BackGround06.gif') no-repeat fixed 100% 100%;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .BackgroundImageurl02{
-    background-image: url('BackGround03.gif');
+    background: url('BackGround03.gif')no-repeat fixed 100% 100%;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .BackgroundImageurl03{
-    background-image: url('BackGeoundE5.gif');
+    background: url('BackGeoundE5.gif')no-repeat fixed 100% 100%;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 /* Untitled-2 */
 .BackgroundImageurl04{
-    background-image: url('United3.jpg');
+    background: url('United3.jpg')no-repeat fixed 100% 100%;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }

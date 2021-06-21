@@ -16,6 +16,7 @@ drf-yasg = "*"
 datetime = "*"
 django-better-admin-arrayfield = "*"
 django-crontab = "*"
+sorl-thumbnail = "*"
 
 [dev-packages]
 

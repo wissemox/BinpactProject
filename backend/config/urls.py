@@ -52,3 +52,8 @@ urlpatterns = [
     path('redoc/', schema_view.with_ui('redoc',
                                        cache_timeout=0), name='schema-redoc')]
 
+from config.settings import DEBUG, STATIC_URL, STATIC_ROOT, MEDIA_URL, MEDIA_ROOT
+from django.conf.urls.static import static
+if DEBUG:
+    urlpatterns += static(STATIC_URL, document_root = STATIC_ROOT)
+    urlpatterns += static(MEDIA_URL, document_root = MEDIA_ROOT)
