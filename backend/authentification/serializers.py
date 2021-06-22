@@ -31,7 +31,6 @@ class RegisterSerializer(serializers.ModelSerializer):
     sexe=serializers.ChoiceField(choices=SEXE_CHOICES,label='')
     role=serializers.ChoiceField(choices=ROLE_CHOICES)
 
-    # nom_communaute = serializers.SerializerMethodField()
     
    
     default_error_messages = {
@@ -54,7 +53,6 @@ class RegisterSerializer(serializers.ModelSerializer):
             'ville',
             'adresse',
             'code_postal',
-            'nom_communaute',
             'profile_pourcentage'
         ]
 
@@ -62,13 +60,11 @@ class RegisterSerializer(serializers.ModelSerializer):
         email = attrs.get('email', '')
         username = attrs.get('username', '')
         domaine = Util.get_domain(email = email)
-        nom_communaute = attrs.get('nom_communaute', '')
-        role =  attrs.get('role', '')
-        if role == 'leader':
-            communaute_result=Communaute.objects.all().filter(nom=nom_communaute,domaine=domaine)
-            if communaute_result:
-                raise serializers.ValidationError(
-                'communaute is already exists')
+        communaute = attrs.get('communaute', '')
+        if domaine != communaute.domaine:
+            raise serializers.ValidationError(
+            'the email is not allowed in this community')
+        
         if not username.isalnum():
             raise serializers.ValidationError(
                 self.default_error_messages)

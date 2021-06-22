@@ -31,7 +31,7 @@ class UserAdmin(admin.ModelAdmin):
     #model  = User
     list_display = ('nom', 'prenom', 'username', 'email', 'tel', 'pays', 'ville', 'adresse', 'code_postal', 
     'is_verified', 'is_active', 'is_staff', 'is_banned', 'end_time_ban', 'date_creation', 'date_modification', 'role', 'sexe', 'date_naissance',
-    'nom_communaute', 'profile_pourcentage')
+    'profile_pourcentage')
 
     actions = ['ban_user', 'unban_user']
     action_form = BanActionForm
