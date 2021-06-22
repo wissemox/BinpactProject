@@ -3,6 +3,7 @@ import {Container , Box , Typography , IconButton , AppBar, Button  } from '@mat
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import StoreIcon from '@material-ui/icons/Store';
 import TimelineIcon from '@material-ui/icons/Timeline';
+import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 import {Link} from 'react-router-dom'
 function MenuMain() {
     return (
@@ -45,9 +46,9 @@ function MenuMain() {
 
                     <Box className="mt-2">
                         <IconButton>
-                        <TimelineIcon style={{color:"#AEAEAE"}}/>
+                        <AccessAlarmIcon style={{color:"#AEAEAE"}}/>
                         </IconButton>
-                        <Typography  variant="p"> Analytics</Typography>
+                        <Link className="no-underline text-gray-400	" to="/Dashboard/ProductInProgress"> <Typography  variant="p"> Product in Progress</Typography></Link>
                     </Box>
 
 

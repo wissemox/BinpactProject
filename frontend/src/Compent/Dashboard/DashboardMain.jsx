@@ -3,6 +3,7 @@ import {Container , Box , Typography , IconButton , AppBar, Button  } from '@mat
 import Navbar from './Navbar'
 import MenuMain from './MenuMain'
 import Main from './Main'
+import ProductinProgres from './ProductinProgres'
 import {Route , BrowserRouter } from 'react-router-dom'
 import Buutique from './Butique/Boutique'
 import AddProduct from './AddProduct';
@@ -28,6 +29,7 @@ function DashboardMain() {
                        <Route  exact path="/Dashboard/Addproduct" render={()=><AddProduct/>}></Route> 
                        <Route  exact path="/Dashboard/Fevoret" render={()=><Fevoret/>}></Route> 
                        <Route exact path="/Dashboard/FevoireProduct"  ><Fevoret/></Route>
+                       <Route exact path="/Dashboard/ProductInProgress"  ><ProductinProgres/></Route>
 
                        </Box>
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import {Container , Box , Typography , IconButton , AppBar, Button  } from '@material-ui/core'
 import {Bar , Line} from 'react-chartjs-2'
-
 const Main = () => {
     return (
         <Container>

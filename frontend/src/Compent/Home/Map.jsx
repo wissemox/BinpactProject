@@ -18,6 +18,11 @@ const Map = () => {
        };
       
     return (
+      <Box>
+        <Box style={{marginTop:"100px"}} className="flex flex-center text-3xl mb-4 mt-4 pt-10 pb-10 font-semibold mt-4	">
+          {/* Text */}
+          <Typography variant="p"> Où nous trouver ? </Typography>
+          </Box>
       <Box m={2}>
         <Box className="flex  flex  flex-center mt-10 mb-10	">
           <Box className=" wp-100">
@@ -36,6 +41,7 @@ const Map = () => {
         />
      </LoadScript> */}
           </Box>
+        </Box>
         </Box>
     )
 }

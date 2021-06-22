@@ -67,7 +67,7 @@ const NavbarDashboard = ({setBollen,Bollent}) => {
                                 </Box>
                             </Box>
                         <Box  className="ml-8 mr-5 mt-3  h-4 font-semibold	ResposivedisplaynoneImage">
-                        <Button className="shadow " style={{background:"#6045E2" , color:"white" , width:"150px" , borderRadius:"30px" , height:"48px"}}> <Typography className="font-bold" variant="p"> Pending Tasks</Typography></Button>
+                        <Button className="shadow " style={{background:"#C01526" , color:"white" , width:"150px" , borderRadius:"30px" , height:"48px"}}> <Typography className="font-bold" variant="p"> Pending Tasks</Typography></Button>
                         </Box>
                         <Box className="flex marginTopResposive  marginLeftResposiveIcon">
                             <Box   className="bg-gray-50  rounded-full mt-3 pl-2 pt-2 ml-5 wh-60 	">

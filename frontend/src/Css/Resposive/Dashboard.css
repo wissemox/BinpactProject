@@ -98,7 +98,7 @@
         }
         .MarginLeftProduct{
             
-            margin-left: 5%;
+            margin-left: 7%;
           
         }
         .Backgroundchangehv{
@@ -120,6 +120,7 @@
             width: 60%;
         
         }
+        
      
     }
   
@@ -202,6 +203,7 @@
  }
  
  @media screen and (max-width: 900px){
+   
     .marginLeaftResposived{
         margin-left: 200px;
         }
@@ -251,6 +253,12 @@
  }
  /* margin */
  @media screen and (max-width: 800px){
+    
+    .ml-16{
+      
+        margin-left: 20px;
+        
+    }
     .widhtPrestange{
         width: 50%;
     }
@@ -331,6 +339,7 @@
    
  }
  @media screen and (max-width: 700px){
+   
      .MarginLeftRepsoiveFevoireProduct{
          margin-left: 40px;
      }
@@ -410,8 +419,14 @@
 /* f-40 */
 @media screen and (max-width: 450px){
     
+    .ml-16{
+      
+        margin-left: 80%;
+        width: 80%;
+      
+    }
     .MarginLeftRepsoiveFevoireProduct{
-        margin-left: 22px;
+        margin-left: 10px;
     }
     .w-Dashboard{
         width: 200px;
@@ -435,10 +450,17 @@
     margin-left: 0px;
 }
 .MarginLeftProduct{
-    margin-left: 10px;
+    margin-left: 20px;
 }
 }
+
 @media screen and (max-width: 385px){
+    .ml-16{
+      
+        margin-left: 100%;
+        width: 80%;
+      
+    }
     .FlexNone300Repsoive{
         display: none;
     }
@@ -450,6 +472,12 @@
         display: none;
     } */
 @media screen and (max-width: 360px){
+    .ml-16{
+      
+        margin-left: 100%;
+        width: 100%;
+      
+    }
     .pl-4{
         padding-left: 20px;
     }
@@ -476,16 +504,27 @@
    .w-400{
        width: 100%;
    }
+  .MarginLeftProduct{
+        margin-left: 8px;
+        
+    }
 }
 
 @media screen and (max-width: 320px){
+   
     .wh-60{
         width: 25px;
         height: 25px;
     }
     .MarginLeftProduct{
-        margin-left: 10px;
+        margin-left: 0px;
         
+    }
+    .ml-16{
+      
+        margin-left: 130%;
+        width: 80%;
+      
     }
     .marginTopResposive{
         padding-top: 1px;
