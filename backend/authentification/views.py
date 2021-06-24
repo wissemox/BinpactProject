@@ -36,21 +36,11 @@ class RegisterView(generics.GenericAPIView):
     def post(self, request):
         user = request.data
         
-        
         serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         user_data = serializer.data
         user = User.objects.get(email=user_data['email'])
-        #save communaute if user.role == leader and user.nom_communate is not null
-        if user.nom_communaute and user.role == 'leader':
-            domaine = Util.get_domain(email = user_data['email'])
-            communaute = Communaute(nom = user.nom_communaute, user = user, domaine= domaine)
-            communaute.save()
-            user.communaute = communaute
-            user.save()
-            user_data['communaute'] = communaute.id
-            
 
         token = RefreshToken.for_user(user).access_token
         current_site = get_current_site(request).domain

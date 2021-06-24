@@ -11,8 +11,8 @@ import string
 import random
 
 
-def rand_slug():
-    return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(6))
+# def rand_slug():
+#     return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(6))
 # Create your models here.
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin)
@@ -37,12 +37,15 @@ class UserManager(BaseUserManager):
         ville='',
         adresse='',
         code_postal=0,
-        nom_communaute=''
+        communaute=''
     ):
         if username is None:
             raise TypeError('Users should have a username')
         if email is None:
             raise TypeError('Users should have a Email')
+        domaine = Util.get_domain(email = email)
+        if domaine != communaute.domaine:
+            raise TypeError('The email does not match the domaine of community')
         
         user = self.model(
             username=username, 
@@ -57,7 +60,7 @@ class UserManager(BaseUserManager):
             ville = ville,
             adresse = adresse,
             code_postal = code_postal,
-            nom_communaute = nom_communaute
+            communaute = communaute,
         )
         user.set_password(password)
         try:
@@ -125,7 +128,7 @@ class Communaute(SafeDeleteModel):
    
     def save(self, *args, **kwargs):
         value = self.nom
-        self.slug = slugify(rand_slug() + "-" + value)
+        self.slug = slugify(value)
         super().save(*args, **kwargs)
 
             
@@ -154,7 +157,6 @@ class User(AbstractBaseUser, PermissionsMixin, SafeDeleteModel):
     communaute = models.ForeignKey(Communaute, null=True, blank=True, on_delete=models.CASCADE, related_name='+') 
     sexe=models.CharField(max_length=20, choices=SEX_CHOICES, default='Select a Role')
     date_naissance = models.DateTimeField(null=True, blank=True)    
-    nom_communaute = models.CharField(max_length=255, blank=True, null=True)
     profile_pourcentage = models.FloatField(blank=True, null=True)
     
     
@@ -198,11 +200,11 @@ class User(AbstractBaseUser, PermissionsMixin, SafeDeleteModel):
         if self.date_naissance :
             completed_fields+=1
         self.profile_pourcentage = completed_fields*100/total
-        
+    
+    
         
     def save(self, *args, **kwargs):        
         value = self.username
-        self.slug = slugify(rand_slug() + "-" + value)
+        self.slug = slugify(value)
         self.calcul_profile_pourcentage()
-        
         super().save(*args, **kwargs)
