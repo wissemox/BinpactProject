@@ -12,6 +12,7 @@
     -o-background-size: cover;
     background-size: cover;
 }
+
 .BackgrounddImageurl01{
     background: no-repeat fixed 100% 100%;
     background-color: red;
@@ -43,3 +44,5 @@
     -o-background-size: cover;
     background-size: cover;
 }
+/* LoginProfile */
+

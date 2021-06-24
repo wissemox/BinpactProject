@@ -24,7 +24,8 @@ import Dashboard from './Compent/Dashboard/DashboardMain'
 import {Route , BrowserRouter } from 'react-router-dom'
 //Compe Imported 
 import Register from './Compent/Register/Register.jsx'
-import ProductFilter from './Compent/Home/ProductFilter/ProudctFilter'
+import ProductFilter from './Compent/Home/ProductFilter/ProductFilter'
+import Login from './Compent/Home/login/login'
 function App() {
   // Function 
   // Registe 1 
@@ -51,7 +52,9 @@ function App() {
       <Route exact path="/Register" render={()=><Register setRedirectRegister2={setRedirectRegister2} setRedirectRegister={setRedirectRegister} RedirectRegister={RedirectRegister} RegisterFunction1={RegisterFunction1} RegisterFunction2={RegisterFunction2} RedirectRegister2={RedirectRegister2}/> } />
       {/* HomePage */}
       <Route exact path="/" render={()=>  <Home/>}></Route>
-      <Route exact path="/ProductFilter" render={()=><ProductFilter/>}/>
+      <Route exact path="/ProductFilter" render={()=><ProductFilter/>}/> 
+      <Route exact path="/ProductFilter/:token" render={({match})=><ProductFilter match={match.params.token}/>}/> 
+      <Route exact path="/Login" render={()=><Login/>}/> 
 
      {/* Dashboard */}
     

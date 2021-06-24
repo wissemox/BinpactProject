@@ -73,7 +73,7 @@ const RegisterStep3 = ({setRedirectRegister2}) => {
                     <Container>
                         <Box className="flex flex-center mt-10">
                             <Box>
-                            <button className="bg-red text-white rounded-full w-90 mr-8 h-30  	" onClick={Goback} >Precedent</button>
+                            <button className="bg-red text-white rounded-full w-90 mr-8   	" onClick={Goback} >Precedent</button>
                             </Box>
                             <Box>
                             <button  className="bg-red text-white rounded-full w-90 " onClick={RegisterUser}>Suivant</button> 

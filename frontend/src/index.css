@@ -26,15 +26,28 @@ code {
 .f-12{
   font-size: 12px;
 }
+.f2-12{
+  font-size: 12px;
+}
+.f2-14{
+  font-size: 12px;
+}
 .f-14{
   font-size: 14px;
 }
 .f-18{
   font-size: 18px;
 }
+.f-20{
+  font-size: 20px;
+}
+.f-25{
+  font-size: 25px;
+}
 .f-40{
   font-size: 40px;
 }
+
 /* Color */
 .colorBplue{
   color: #3E6993;
@@ -44,6 +57,13 @@ code {
 }
 .colorRed{
   color: #B90D1E;
+}
+.colorBlueLow{
+  color:#276BB4 ;
+}
+.bg-BlueLow{
+
+  background-color: #276BB4;
 }
 .bg-Bluegr{
   background-image: linear-gradient(315deg, #1B2E4F 0%, #5693CE 74%);

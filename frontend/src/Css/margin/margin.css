@@ -240,6 +240,9 @@
 .ml-360{
     margin-left: 360px;
 }
+.ml-130{
+    margin-left: 130px;
+}
 .mll-30p{
     margin-left: 30%;
 }
@@ -276,7 +279,12 @@
 .mt-20p{
     margin-top: 20%;
 }
-
+.mt-140{
+    margin-top: 140px;
+}
+.mt-20{
+    margin-top: 20px;
+}
 .mr-25p{
  margin-right:25%;
 }
@@ -290,14 +298,22 @@
 .mb-40R{
     margin-bottom: 40px;
 }
+.mb-60{
+    margin-bottom: 60px;
+}
 .mt-50R{
     margin-top: 50px;
 }
-
+.mb-150{
+    margin-bottom: 150px;
+}
 /* Presnolise Margin */
 .marginRightReposiveAbosulte{
     margin-right: 45%;
 }
 .marginLeftReposiveAbosulte{
     margin-left: 45%;
+}
+.mr-10{
+    margin-right: px;
 }

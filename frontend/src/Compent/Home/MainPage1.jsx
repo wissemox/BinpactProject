@@ -6,12 +6,16 @@ import {Parallax} from 'react-parallax'
 import Aos from 'aos'
 import "aos/dist/aos.css"
 import {Link} from 'react-router-dom'
+import { Redirect } from 'react-router';
 const MainPage = () => {
     
     useEffect(() => {
         Aos.init({duration: 2000});
       }, [])
- 
+      const [TestBloen , setBolentTrue]=useState(false)
+      const RedirectTest = () =>{
+          setBolentTrue(true)
+      }
     const [active , setactive]=useState(false)
     const[Menu , setMenud]=useState(false)
     // OnScroll function
@@ -84,12 +88,15 @@ const MainPage = () => {
                             <Typography style={{color:Acceuil&&Scroll&&"#F1898C"}} data-aos="fade" variant="p" className="pr-40">ACCEUIL</Typography>
                             <Typography style={{color:Scroll&&!Acceuil&&CommentCaMarche&&"#F1898C"}} data-aos="fade"  variant="p" className="pr-40">COMMUNAUTES</Typography>
                             <Typography style={{color:Scroll&&!Acceuil&&!CommentCaMarche&&PourqoiBinpact&&"#F1898C"}}  data-aos="fade" variant="p" className="pr-40">POURQOI BINPACT ?</Typography>
-                            <Typography data-aos="fade" variant="p" className="pr-40">QUI SOMMES NOUS</Typography>
+                          <a style={{color:Scroll?"#7C838F":"white"}} className={`no-underline `} href="/Register">       <Typography data-aos="fade" variant="p" className="pr-40">INSCRIPTION</Typography></a>
+                     
+
+
                           
                         </Box>
                      
                             <Box  className="Mt-RButton NavBarResposive text-sm   ">
-                             <Button style={{color:"white" , backgroundColor:"#C01526" ,borderRadius:"20px"}} data-aos="fade" variant="p" className="pr-40  "><a className="no-underline text-white	" href="http://localhost:3000/Register"><Typography className="text-sm " variant="p">SE CONNECTER</Typography></a></Button> 
+                             <Button style={{color:"white" , backgroundColor:"#C01526" ,borderRadius:"20px"}} data-aos="fade" variant="p" className="pr-40  "><a className="no-underline text-white	" href="/login"><Typography className="text-sm " variant="p">SE CONNECTER</Typography></a></Button> 
                             </Box>
                         <Box  className="hidden flex  mt-3 wp-80	   MenuResposive  text-left">
                        
@@ -238,7 +245,13 @@ const MainPage = () => {
                         {Catgories && 
                         <Box  boxShadow={5}   style={{height:"150px"}} className="bg-gray-200 flex-left	 rounded-3xl flex	 AnimationMenu	bg-gray-200	 wp-30 mt-2  mb-10">
                         <Box className="px-10 py-3">
-                            {Produtct.filter((el)=>el.Name.toLocaleLowerCase().includes(Catgories.toLocaleLowerCase().trim())).map((el)=><p>{el.Name}</p>)}
+                        {Produtct.filter((el)=>el.Name.toLocaleLowerCase().includes(Catgories.toLocaleLowerCase().trim())).map((el)=><div>
+                            {/* TestBloen */}
+                            
+                           <a className="no-underline" href={`/ProductFilter/${el.Name}`}> <p>{el.Name}</p></a>
+                        </div>
+                        
+                        )}
                             
                         </Box>
                          </Box> 

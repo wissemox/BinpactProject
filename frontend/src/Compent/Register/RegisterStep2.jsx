@@ -104,7 +104,7 @@ const RegisterStep2 = ({setRedirectRegister , RegisterFunction2,RedirectRegister
                  </Box>
                  <Box className="flex flex-center">
                         <Box>
-                        <button onClick={Presendnt} className="bg-red text-white rounded-full w-90 mr-8 h-30 	"  >Presdent</button>
+                        <button onClick={Presendnt} className="bg-red text-white rounded-full w-90 mr-8 	"  >Presdent</button>
                          <button  className="bg-red text-white rounded-full w-90" onClick={Redirect03}>Suivant</button>
                         </Box>
                  </Box>

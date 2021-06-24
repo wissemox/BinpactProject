@@ -1,6 +1,49 @@
 /* ml-20 */
 /* NavBar */
 @media screen and (max-width: 8000px){
+    .BackgroundImageurl05{
+        background: url('PorifleBackgroundImg.png')no-repeat fixed 100% 100%;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    }
+    .marginLeaftlogin{
+        margin-left: 30%;
+    }
+    .marginToplogin{
+        margin-top: 10%;
+    }
+    /*  background: url('PorifleBackgroundImg.png')no-repeat fixed 100% 100%;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+    .paddinTopResposiveLogin{
+        padding-top: 10%;
+    }
+    .paddingLeaftResposive{
+        padding-left: 10%;
+    }
+    .widhtLoginInput{
+        width: 400px;
+    }
+    .marginTopFevoirteIcon{
+        margin-top: 12px;
+    }
+    .marginLeaftProfile{
+        margin-left: 200px;
+    }
+    .marginLeaftFevoiretResposive{
+        margin-left: 250px;
+    }
+    .marginLeftResposive04{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    .fonsizeChange{
+        font-size: 50px;
+    }
     .marginRightReposiveAbosulte{
         margin-right: 700px;
     }
@@ -29,6 +72,12 @@
     }
 }
 @media screen and (max-width: 2900px){
+    .marginLeaftlogin{
+        margin-left: 20%;
+    }
+    .marginToplogin{
+        margin-top: 10%;
+    }
     .Resposive {
      
      justify-content: center;
@@ -43,6 +92,12 @@
 
 }
 @media screen and (max-width:1600px){
+    .marginLeaftlogin{
+        margin-left: 10%;
+    }
+    .marginToplogin{
+        margin-top: 5%;
+    }
    .pt-3{
       
        margin-top: 10px;
@@ -558,7 +613,9 @@
    
 }
 @media screen and (max-width: 800px){
-   
+    .marginLeftResposive04{
+        margin-left: 150px;
+    }
     .Resposive{
        
         margin-left: 10%;
@@ -599,6 +656,27 @@
 }
 
 @media screen and (max-width: 700px){
+    .BackgroundImageurl05{
+        background: url('BackGroundImageLogin.png')no-repeat fixed 100% 100%;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    }
+    .marginTopFevoirteIcon{
+        margin-top: 0px;
+    }
+    .marginLeaftFevoiretResposive{
+        margin-left: 180px; 
+    }
+    .marginLeaftProfile{
+        -webkit-transition: 2s;
+
+        margin-left: 30%;
+    }
+    .fonsizeChange{
+        font-size: 40px;
+    }
     .ParallaxResposive1400widht{
         display: none;
     }
@@ -666,8 +744,17 @@
     .text-lg{
         font-size: 15px;
     }
+  
 }
 @media screen and (max-width: 600px){
+    .paddingLeaftResposive{
+        
+        padding-left: 80px;
+    }
+    .widhtLoginInput{
+        width: 330px;
+    }
+  
     .TextResposive{
         padding-top: 10px;
         font-size: 12px;
@@ -735,6 +822,16 @@
 
 /* ml-20  ml-8pR  */
 @media screen and (max-width: 440px){
+    /* .paddinTopResposive{
+        padding-top: 30%;
+    } */
+    .paddinTopResposiveLogin{
+        padding-top: 50%;
+    }
+    .paddingLeaftResposive{
+        
+        padding-left: 20px;
+    }
  .ml-20 {
      margin-left: 0px;
  }

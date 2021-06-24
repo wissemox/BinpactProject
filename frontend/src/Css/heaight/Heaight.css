@@ -1,6 +1,9 @@
 .h-25{
 height: 25px;
 }
+.h-30{
+    height: 30px;
+}
 .h-35{
     height: 35px;
 }
@@ -27,6 +30,9 @@ height: 25px;
 }
 .h-200{
     height: 200px;
+}
+.h-250{
+    height: 250px;
 }
 .h-350{
     height: 350px;
