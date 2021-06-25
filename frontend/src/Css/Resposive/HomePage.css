@@ -1,6 +1,12 @@
 /* ml-20 */
 /* NavBar */
 @media screen and (max-width: 8000px){
+    .paddingTopResposive{
+        padding-top: 100px;
+    }
+    .marginLeaftResposiveStart{
+        margin-left: 100px;
+    }
     .BackgroundImageurl05{
         background: url('PorifleBackgroundImg.png')no-repeat fixed 100% 100%;
     -moz-background-size: cover;
@@ -747,6 +753,9 @@
   
 }
 @media screen and (max-width: 600px){
+    .paddingTopResposive{
+        padding-top: 0px;
+    }
     .paddingLeaftResposive{
         
         padding-left: 80px;

@@ -54,7 +54,7 @@ const ProductMap = ({el}) => {
                         <Box  style={{width:"40%"}} className="bg-red mt-3 rounded-full mb-3	">
                          <Button style={{color:"white" , width:"100%" , paddingRight:"60px"}}><Typography className="f-14" variant="p">Prix </Typography> </Button>
                         </Box>
-                        <Box className="mt-3 ml-16">
+                        <Box className="mt-3 marginLeaftResposiveStart">
                             <Rate0  Rate={Rate} setRate={setRate} />
                         </Box>
                     </Box>

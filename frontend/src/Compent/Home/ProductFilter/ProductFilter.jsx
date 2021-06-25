@@ -95,7 +95,7 @@ const ProductFilter = ({match}) => {
                     <Box className="w-400 NavBarResposive">
                    <img src={process.env.PUBLIC_URL +`/Product04.png` }/>
                     </Box>
-                    <Box  style={{color:"#12385F"}}className="pt-20 font-extrabold	">
+                    <Box  style={{color:"#12385F"}}className="paddingTopResposive font-extrabold	">
                         <Typography className="fonsizeChange"  variant="p">TROQUEZ<br/>en quelques clics !</Typography>
                     </Box>
                 </Box>
