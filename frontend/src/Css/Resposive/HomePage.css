@@ -1,6 +1,9 @@
 /* ml-20 */
 /* NavBar */
 @media screen and (max-width: 8000px){
+    .heaightvhResposive{
+        height: 40vh;
+    }
     .paddingTopResposive{
         padding-top: 100px;
     }
@@ -95,7 +98,9 @@
         margin-left: 4%;
     }
     
-
+    .heaightvhResposive{
+        height: 20vh;
+    }
 }
 @media screen and (max-width:1600px){
     .marginLeaftlogin{
@@ -753,6 +758,12 @@
   
 }
 @media screen and (max-width: 600px){
+    .DisplayNoneResposive{
+        display: none;
+    }
+    .heaightvhResposive{
+        height: 40vh;
+    }
     .paddingTopResposive{
         padding-top: 0px;
     }

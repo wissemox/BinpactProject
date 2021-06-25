@@ -168,7 +168,7 @@ const MainPage = () => {
                            {/* style={{justifyContent:"flex-end"}}  */}
                                 <Box  className="bg-red items-end ResercherResposiveMobile	hidden  m-3 bg-white rounded-full mt-5  flex opacity-90 ">
                                     <Box className="wp-90">
-                                        <input className="ml-5 wp-90" />
+                                        <input value={Catgories} onChange={(e)=>setCatgories(e.target.value)} className="ml-5 wp-90" />
                                     </Box>
                                     <Box     className="py-2 pr-2  flex wp-10 flex-left">
                                         <Box>

@@ -111,7 +111,7 @@ const ProductFilter = ({match}) => {
             </Box>
            
             <Container>
-                <Box className="flex flex-center mb-20 ">
+                <Box className="flex flex-center mb-20 DisplayNoneResposive">
                     <Box className="mr-10">
                         <Typography className="px-4 py-2" style={{background:"#DFE9F5"}} variant="p">1</Typography>
                     </Box>
@@ -130,7 +130,7 @@ const ProductFilter = ({match}) => {
                 </Box>
                 
             </Container>
-            <Box  style={{background:"#BF0D1E"}}>
+            <Box  >
           <Fotter/>
           </Box>
         </Box>
