@@ -6,12 +6,13 @@ import {Parallax} from 'react-parallax'
 import Aos from 'aos'
 import "aos/dist/aos.css"
 import {Link} from 'react-router-dom'
-const NavbarFilter = () => {
+import Rate0 from '../../../Function/RateSet'
+const NavbarFilter = ({Rate , setRate}) => {
     
     useEffect(() => {
         Aos.init({duration: 2000});
       }, [])
- 
+     
     const [active , setactive]=useState(false)
     const[Menu , setMenud]=useState(false)
     // OnScroll function
@@ -124,6 +125,7 @@ const NavbarFilter = () => {
                                         <Typography variant="p">Comment ca marche ?</Typography>
                                     </Box>
                                     <Box className="pb-10 font-semibold text-l	pl-5 py-4 HoverBackGround	">
+                                     
                                         <Typography variant="p"> Pourqoi Binpct ?</Typography>
                                     </Box>
                                     <Box className="pb-10 font-semibold text-l	pl-5 py-4 HoverBackGround	">
@@ -177,14 +179,14 @@ const NavbarFilter = () => {
                                 <Typography  variant="p">Prix en binz</Typography>
                                 </Box>
                                 <Box className="pr-10 mt-1 w-110r   text-center ">
-                                <Typography  variant="p">Rating user</Typography>
+                                <Typography  variant="p"><Rate0 Rate={Rate} setRate={setRate}/></Typography>
                                 </Box >
                                 <Box className="pr-10  mt-1 w-250   text-center ">
                                 <Typography  variant="p"> Catactéristique</Typography> 
                                 </Box>
                                 </Box>
                             </Box>
-                          
+                            {console.log(Rate)}
                
                               
                            
