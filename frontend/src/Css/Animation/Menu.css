@@ -14,3 +14,15 @@
     .Animationlogo02{
       animation:Animationlogo02 3s infinite ;
   }
+.scalAnimation{
+  animation:scalAnimation01 2s ;
+}
+
+@keyframes scalAnimation01{
+  from {
+    transform: scale(0)
+  }
+  to {
+    transform: scale(1)
+  }
+}

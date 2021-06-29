@@ -20,6 +20,8 @@ const MainPage = () => {
     const[Menu , setMenud]=useState(false)
     // OnScroll function
     const[Scroll , setScroll]=useState(false)
+    const[Scrol02l , setScrol02l]=useState(false)
+
     const[Acceuil , setAcceuil]=useState(false)
     const[CommentCaMarche , setCommentCaMarche]=useState(false)
     const[PourqoiBinpact , setPourqoiBinpact]=useState(false)
@@ -38,7 +40,19 @@ const MainPage = () => {
             setScroll(false)
         }
     }
+    
     window.addEventListener('scroll' ,changeBackground )
+    const changeBackground01 =()=>{
+     
+        if(window.scrollY===100 || window.scrollY===200 ||  window.scrollY===300 || window.scrollY===400    ){
+            setScrol02l(true)
+        }if(window.scrollY===0||window.scrollY>600){
+
+            setScrol02l(false)
+        }
+    }
+    
+    window.addEventListener('scroll' ,changeBackground01 )
  
 
     // Here Accueil function change Color 
@@ -82,7 +96,7 @@ const MainPage = () => {
                 <AppBar data-aos="fade" style={{backgroundColor:"transparent",boxShadow:"none"}} position={`${Scroll&&"fixed"}`} className={`${Scroll && "AnimaiionNavbarSticky"} ${Scroll && "bg-white"}  `}>
                     {!Menu && <>  <Box data-aos="fade" className="flex ml-8pR  pt-10 flex-center  ">
                         <Box>
-                            {!Scroll ?     <img  className="w-190 imgResposive"   src="binpact002.png"/> :  <img  className="w-190 imgResposive"   src="binpact002.png"/>}
+                            {!Scroll ?     <img  className="w-190 imgResposive"   src="binpact.svg"/> :  <img  className="w-190 imgResposive"   src="binpact.svg"/>}
                         </Box>
                         <Box className={`mt-40R  ml-20pR flex text-sm NavBarResposive  ${Scroll ?"text-gray-500	":"text-white"}  `}>
                             <Typography style={{color:Acceuil&&Scroll&&"#F1898C"}} data-aos="fade" variant="p" className="pr-40">ACCEUIL</Typography>
@@ -149,8 +163,8 @@ const MainPage = () => {
                  <Container> {/* Title */}
                      {!Menu && <>
                         <Box className="ml-3p">
-                            
-                                <Box  className="tracking-widest  wp-100  mr-40 mt-180">
+                            {/* Scroll */}
+                                <Box className={`tracking-widest  wp-100  mr-40 ${Scrol02l ? "marginToponScrolTailte":"mt-180"}`} >
                                     <Box  data-aos="fade-down-left"  className="flex">
                                         <h3    className="  tracking-widest leading-snug   text-5xl text-white">Troquez des produits de qualité
                                         dans une communuté engagée</h3>
@@ -369,7 +383,10 @@ const MainPage = () => {
                     {Catgories && 
                         <Box  boxShadow={5}   style={{height:"150px"}} className="bg-gray-200 flex-left	 rounded-3xl flex	 AnimationMenu	bg-gray-200	 wp-30 mt-2  mb-10">
                         <Box className="px-10 py-3">
-                            {Produtct.filter((el)=>el.Name.toLocaleLowerCase().includes(Catgories.toLocaleLowerCase().trim())).map((el)=><p className="f-14">{el.Name}</p>)}
+                            {Produtct.filter((el)=>el.Name.toLocaleLowerCase().includes(Catgories.toLocaleLowerCase().trim())).map((el)=><div>
+                                <a className="no-underline " href={`/ProductFilter/${el.Name}`}> <p className="fontSidzeResposive">{el.Name}</p></a>
+
+                            </div>)}
                             
                         </Box>
                          </Box> 

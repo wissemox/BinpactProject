@@ -11,12 +11,12 @@ psycopg2 = "*"
 djangorestframework = "*"
 pillow = "*"
 django-safedelete = "*"
-djangorestframework-jwt = "*"
 drf-yasg = "*"
 datetime = "*"
 django-better-admin-arrayfield = "*"
 django-crontab = "*"
 sorl-thumbnail = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 

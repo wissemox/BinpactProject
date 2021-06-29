@@ -1,6 +1,12 @@
 /* ml-20 */
 /* NavBar */
 @media screen and (max-width: 8000px){
+    .marginLeaftRepsoiveMap{
+        margin-left: 20px;
+    }
+    .flexDirecationResposive{
+        display: flex;
+    }
     .heaightvhResposive{
         height: 40vh;
     }
@@ -667,6 +673,13 @@
 }
 
 @media screen and (max-width: 700px){
+    .marginLeaftRepsoiveMap{
+        margin-left: 0px;
+        margin-top: 50px;
+    }
+    .flexDirecationResposive{
+        flex-direction: column;
+    }
     .BackgroundImageurl05{
         background: url('BackGroundImageLogin.png')no-repeat fixed 100% 100%;
     -moz-background-size: cover;
@@ -758,6 +771,7 @@
   
 }
 @media screen and (max-width: 600px){
+
     .DisplayNoneResposive{
         display: none;
     }
@@ -857,5 +871,12 @@
  }
  .ml-8pR {
      margin-left: 0px;
+ }
+ .fontSidzeResposive{
+     font-size: 10px;
+    
+ }
+ .px-10{
+     padding-left: 20%;
  }
 }

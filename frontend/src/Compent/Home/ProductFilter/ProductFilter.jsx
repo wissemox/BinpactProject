@@ -115,7 +115,7 @@ const ProductFilter = ({match}) => {
             </Container>
           {/* Product map and filter  */}
             <Box className="marginLeftResposive04 mb-150" >
-                    <Box  className="wp-100 flex-center displayflex">
+                    <Box  className="wp-100 scalAnimation flex-center displayflex ">
                   {!Rate &&   ProductMap.filter((catgorie)=>catgorie.Catgory==match ).map((el)=><ProductMap01 el={el}/>)}
                   {Rate &&   ProductMap.filter((catgorie)=>catgorie.Rate==Rate && catgorie.Catgory==match  ).map((el)=><ProductMap01 el={el}/>)}
 

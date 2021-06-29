@@ -5,9 +5,9 @@ const Rate0 = ({Rate }) => {
         let starsArray =[]
         for(let i=1 ; i<=5 ;i++){
             if(i<=x){
-                starsArray.push(<span style={{fontSize:"25px" ,color:"#56AC5C"}} >★</span>);
+                starsArray.push(<span style={{fontSize:"25px" ,color:"#2A6AB2"}} >★</span>);
             }else{
-                starsArray.push(<span style={{fontSize:"25px",color:"#56AC5C"}} >☆</span>)
+                starsArray.push(<span style={{fontSize:"25px",color:"#2A6AB2"}} >☆</span>)
             }
         }
         return starsArray;

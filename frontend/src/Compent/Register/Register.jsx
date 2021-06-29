@@ -120,10 +120,10 @@ const Register = ({RedirectRegister,setRedirectRegister2 , RegisterFunction1,set
                 </Box>
                 <Box className="flex  mt-10 flex-center">
                     <Box>
-                    <button className="bg-Disbaled text-white rounded-full w-90 mr-8   	" >Precedent</button>
+                    <button className="bg-Disbaled h-8  text-white rounded-full  mr-8  w-100 	" >Precedent</button>
                     </Box>
                     <Box>
-                        <button onClick={NextStep} className="bg-red text-white rounded-full w-90 ">Suivant</button>
+                        <button style={{width:"120px"}} onClick={NextStep} className="bg-red ml-2 text-white rounded-full h-8  ">Suivant</button>
                     </Box>
                 </Box>
                 {/* NavBarCharge */}

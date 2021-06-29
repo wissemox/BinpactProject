@@ -33,7 +33,7 @@ const login = () => {
                      </Box>
                      <Box className="flex flex-center mt-4">
                         <Box>
-                        <Button  style={{backgroundColor:"#C12026" , color:"#FFFFFF" , borderRadius:"20px" , width:"130px" , height:"30px"}}>Connexin</Button>
+                        <Button  style={{backgroundColor:"#C12026" , color:"#FFFFFF" , borderRadius:"20px" , width:"180px" , height:"40px"}}>Connexin</Button>
                         </Box>
                      </Box>
                    </Box>
