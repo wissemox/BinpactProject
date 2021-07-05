@@ -9,8 +9,10 @@ import Impression from './image/Impression'
 import Message from './image/Message'
 import Notifacation from './image/Notifacation'
 import Reserche from './image/Reserche'
+import Rate0 from '../../Function/RateSet'
+
 const NavbarDashboard = ({setBollen,Bollent}) => {
-  
+    const [Number, setNumber] = useState(1)
     return (
         <>
         

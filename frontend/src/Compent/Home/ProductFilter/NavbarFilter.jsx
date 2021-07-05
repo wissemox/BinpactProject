@@ -6,12 +6,13 @@ import {Parallax} from 'react-parallax'
 import Aos from 'aos'
 import "aos/dist/aos.css"
 import {Link} from 'react-router-dom'
-const NavbarFilter = () => {
+import Rate0 from '../../../Function/RateSet'
+const NavbarFilter = ({Rate , setRate}) => {
     
     useEffect(() => {
         Aos.init({duration: 2000});
       }, [])
- 
+     
     const [active , setactive]=useState(false)
     const[Menu , setMenud]=useState(false)
     // OnScroll function
@@ -124,6 +125,7 @@ const NavbarFilter = () => {
                                         <Typography variant="p">Comment ca marche ?</Typography>
                                     </Box>
                                     <Box className="pb-10 font-semibold text-l	pl-5 py-4 HoverBackGround	">
+                                     
                                         <Typography variant="p"> Pourqoi Binpct ?</Typography>
                                     </Box>
                                     <Box className="pb-10 font-semibold text-l	pl-5 py-4 HoverBackGround	">
@@ -150,7 +152,7 @@ const NavbarFilter = () => {
                            {/* style={{justifyContent:"flex-end"}}  */}
                                 <Box  className="bg-red items-end ResercherResposiveMobile	hidden  m-3 bg-white rounded-full mt-5  flex opacity-90 ">
                                     <Box className="wp-90">
-                                        <input className="ml-5 wp-90" />
+                                        <input value={Catgories} onChange={(e)=>setCatgories(e.target.value)} className="ml-5 wp-90" />
                                     </Box>
                                     <Box     className="py-2 pr-2  flex wp-10 flex-left">
                                         <Box>
@@ -177,14 +179,14 @@ const NavbarFilter = () => {
                                 <Typography  variant="p">Prix en binz</Typography>
                                 </Box>
                                 <Box className="pr-10 mt-1 w-110r   text-center ">
-                                <Typography  variant="p">Rating user</Typography>
+                                <Typography  variant="p"><Rate0 Rate={Rate} setRate={setRate}/></Typography>
                                 </Box >
                                 <Box className="pr-10  mt-1 w-250   text-center ">
                                 <Typography  variant="p"> Catactéristique</Typography> 
                                 </Box>
                                 </Box>
                             </Box>
-                          
+                            {console.log(Rate)}
                
                               
                            

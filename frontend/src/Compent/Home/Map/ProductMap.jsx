@@ -8,7 +8,7 @@ const ProductMap = ({el}) => {
     // Rate Function here 
     const[Rate , setRate]=useState(1)
     return (
-        <Box  boxShadow={3} className="w-340 bg-white mr-10 mt-10 rounded-3xl	">
+        <Box  boxShadow={3} className="w-340 bg-white mr-10 mt-10 rounded-3xl scalAnimation	">
                 <Box   className="absolute flex marginLeaftProfile mt-140  "> 
                     <Box> 
                         <Box className=" flex flex-center">
@@ -28,7 +28,7 @@ const ProductMap = ({el}) => {
                 </Box>
                  <Box className="mb-3 mt-4 ml-4">
                         <Box  className="absolute   marginTopFevoirteIcon marginLeaftFevoiretResposive"  >
-                            <FavoriteIcon style={{color:"#56AC5C" , fontSize:"42px"}}/>
+                            <FavoriteIcon style={{color:"#9B9B9B" , fontSize:"42px"}}/>
                         </Box>
                     <Typography  className="font-semibold pb-10 f-20" variant="p">{el.Name}</Typography>
                    
@@ -41,7 +41,7 @@ const ProductMap = ({el}) => {
                     </Box>
                     <Box className="pt-1 ">
                         <Typography className="font-semibold	" variant="p">Etat :</Typography>
-                        <Typography className="font-semibold" style={{color:"#56AC5C"}} variant="p"> Parfait</Typography>
+                        <Typography  style={{color:"#9B9B9B" , fontWeight:"900"}} variant="p"> Parfait</Typography>
                     </Box>
                     <Box style={{width:"100%"}} className="mt-3    " >
                         <Box>
@@ -55,7 +55,7 @@ const ProductMap = ({el}) => {
                          <Button style={{color:"white" , width:"100%" , paddingRight:"60px"}}><Typography className="f-14" variant="p">Prix </Typography> </Button>
                         </Box>
                         <Box className="mt-3 marginLeaftResposiveStart">
-                            <Rate0  Rate={Rate} setRate={setRate} />
+                            <Rate0  Rate={el.Rate} />
                         </Box>
                     </Box>
                     <Box className="flex mt-2">

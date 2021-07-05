@@ -5,8 +5,10 @@ import ProductMap01 from '../Map/ProductMap'
 import Fotter from './Fotter'
 const ProductFilter = ({match}) => {
     // Product Filter
+    const [Rate , setRate]=useState(0)
     const [ProductMap , setProductMap]=useState([{
         Catgory :"Smartphone",
+        Rate:4,
         Name:"Msi Ds100", 
         Prix:"15dt", 
         image:"Samsung-Galaxy-S21-Ultra-Spen-XDA-234235.jpg", 
@@ -16,6 +18,7 @@ const ProductFilter = ({match}) => {
     {
         Catgory :"Smartphone",
         Name:"Msi Ds100", 
+        Rate:2,
         Prix:"15dt", 
         image:"Huawei-Watch-Fit-09.jpg", 
         Descarpation:"dadazdazdqazdijdzaopdjazd zda",
@@ -23,6 +26,7 @@ const ProductFilter = ({match}) => {
     },
     {
         Catgory :"Souris",
+        Rate:4,
         Name:"Msi Ds100", 
         Prix:"15dt", 
         image:"Huawei-Watch-Fit-09.jpg", 
@@ -31,6 +35,7 @@ const ProductFilter = ({match}) => {
     },
     {
         Catgory :"Ordinater",
+        Rate:3,
         Name:"Msi Ds100", 
         Prix:"15dt", 
         image:"Huawei-Watch-Fit-09.jpg", 
@@ -39,6 +44,7 @@ const ProductFilter = ({match}) => {
     },
     {
         Catgory :"Ordinater",
+        Rate:5,
         Name:"Msi Ds100", 
         Prix:"15dt", 
         image:"Huawei-Watch-Fit-09.jpg", 
@@ -47,6 +53,7 @@ const ProductFilter = ({match}) => {
     },
     {
         Catgory :"Ordinater",
+        Rate:4,
         Name:"Msi Ds100", 
         Prix:"15dt", 
         image:"Huawei-Watch-Fit-09.jpg", 
@@ -55,6 +62,7 @@ const ProductFilter = ({match}) => {
     },
     {
         Catgory :"Ordinater",
+        Rate:4,
         Name:"Msi Ds100", 
         Prix:"15dt", 
         image:"Huawei-Watch-Fit-09.jpg", 
@@ -63,6 +71,7 @@ const ProductFilter = ({match}) => {
     },
     {
         Catgory :"Ordinater",
+        Rate:5,
         Name:"Msi Ds100", 
         Prix:"15dt", 
         image:"Huawei-Watch-Fit-09.jpg", 
@@ -71,6 +80,7 @@ const ProductFilter = ({match}) => {
     },
     {
         Catgory :"Ordinater",
+        Rate:3,
         Name:"Msi Ds100", 
         Prix:"15dt", 
         image:"Huawei-Watch-Fit-09.jpg", 
@@ -79,6 +89,7 @@ const ProductFilter = ({match}) => {
     },
     {
         Catgory :"Souris",
+        Rate:4,
         Name:"Msi Ds100", 
         Prix:"15dt", 
         image:"Huawei-Watch-Fit-09.jpg", 
@@ -88,7 +99,7 @@ const ProductFilter = ({match}) => {
     ])
     return (
         <Box>
-            <NavbarFilter/>
+            <NavbarFilter Rate={Rate} setRate={setRate}/>
             <Container>
                 <Box className="flex flex-center  mt-80  ">
                     
@@ -104,14 +115,15 @@ const ProductFilter = ({match}) => {
             </Container>
           {/* Product map and filter  */}
             <Box className="marginLeftResposive04 mb-150" >
-                    <Box  className="wp-100 flex-center displayflex">
-                    {ProductMap.filter((catgorie)=>catgorie.Catgory==match).map((el)=><ProductMap01 el={el}/>)}
+                    <Box  className="wp-100 scalAnimation flex-center displayflex ">
+                  {!Rate &&   ProductMap.filter((catgorie)=>catgorie.Catgory==match ).map((el)=><ProductMap01 el={el}/>)}
+                  {Rate &&   ProductMap.filter((catgorie)=>catgorie.Rate==Rate && catgorie.Catgory==match  ).map((el)=><ProductMap01 el={el}/>)}
 
                     </Box>
             </Box>
            
             <Container>
-                <Box className="flex flex-center mb-20 ">
+                <Box className="flex flex-center mb-20 DisplayNoneResposive">
                     <Box className="mr-10">
                         <Typography className="px-4 py-2" style={{background:"#DFE9F5"}} variant="p">1</Typography>
                     </Box>
@@ -130,7 +142,7 @@ const ProductFilter = ({match}) => {
                 </Box>
                 
             </Container>
-            <Box  style={{background:"#BF0D1E"}}>
+            <Box  >
           <Fotter/>
           </Box>
         </Box>

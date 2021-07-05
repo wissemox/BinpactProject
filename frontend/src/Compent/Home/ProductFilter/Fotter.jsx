@@ -20,7 +20,7 @@ const Fotter = () => {
           
            
         </Container>
-         <Box style={{backgroundColor:"#B10D1E"}} className="lex flex-center">
+         <Box style={{backgroundColor:"#B10D1E" }} className="lex flex-center heaightvhResposive">
             <Box className="text-center py-10 text-white	">
          <Typography variant="p">We believe that People with values dliver quality prdycts and nedd quality service <br/> @ 2020 Binpact . All rights reserved contact@binpact.com</Typography>
          </Box>
