@@ -1,5 +1,7 @@
 from django.db import models
+from django.db.models.expressions import Value
 from authentification.models import User
+#from transaction.models import Transaction
 from safedelete.models import SafeDeleteModel, SOFT_DELETE_CASCADE
 from django.utils.text import slugify
 import string
@@ -8,7 +10,6 @@ import random
 #from django.utils.html import format_html
 from django.utils.safestring import mark_safe
 from django_better_admin_arrayfield.models.fields import ArrayField
-
 
 
 def rand_slug():
@@ -52,6 +53,7 @@ class Produit(SafeDeleteModel):
     updated_at = models.DateTimeField(auto_now=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE) 
     slug = models.SlugField(max_length=250,null=False, unique=True) 
+    #transaction = models.ForeignKey(Transaction, on_delete=models.CASCADE) 
 
     def __str__(self):
         return self.nom

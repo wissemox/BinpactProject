@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'django_better_admin_arrayfield',
     'django_crontab',
     'sorl.thumbnail',
+    'offres',
+    'transaction',
 ]
 # The end ban cron job is scheduled to be run at midnight every day
 # delete_unpublished cron job is scheduled to be run  Every day at 1am
@@ -111,7 +113,7 @@ DATABASES = {
 }
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 1,
+    'PAGE_SIZE': 10,
     'NON_FIELD_ERRORS_KEY': 'error',
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',

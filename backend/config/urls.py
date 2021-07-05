@@ -42,7 +42,7 @@ urlpatterns = [
     
     path('produit', include('gestionDeProduits.urls')),
     path('auth/', include('authentification.urls')),
-    
+    path('offre/', include('offres.urls')),
     
     path('', schema_view.with_ui('swagger',
                                  cache_timeout=0), name='schema-swagger-ui'),
