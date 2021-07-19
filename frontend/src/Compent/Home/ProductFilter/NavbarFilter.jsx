@@ -79,7 +79,7 @@ const NavbarFilter = ({Rate , setRate}) => {
                 <AppBar data-aos="fade" style={{backgroundColor:"#F0F0F0" ,boxShadow:"none"}} position={`${Scroll&&"fixed"}`} className={`${Scroll && "AnimaiionNavbarSticky"} ${Scroll && "bg-gray-300	"}  `}>
                     {!Menu && <>  <Box data-aos="fade" className="flex ml-8pR  pt-10 flex-center mb-20  ">
                         <Box>
-                            {!Scroll ?   <img className="w-190 imgResposive" src={process.env.PUBLIC_URL +`/binpact002.png` }/>  : <img className="w-190 imgResposive" src={process.env.PUBLIC_URL +`/binpact002.png` }/> }  
+                            {!Scroll ?   <img className="w-190 imgResposive" src={process.env.PUBLIC_URL +`/Binpact.svg` }/>  : <img className="w-190 imgResposive" src={process.env.PUBLIC_URL +`/Binpact.svg` }/> }  
                         </Box>
                         <Box className={`mt-40R  ml-20pR flex text-sm NavBarResposive  ${Scroll ?"text-gray-500	":"gray-500"}  `}>
                             <Typography data-aos="fade" variant="p" className="pr-40 text-gray-700	">ACCEUIL</Typography>
@@ -255,7 +255,7 @@ const NavbarFilter = ({Rate , setRate}) => {
         {/* NavBar */}
             <AppBar data-aos="fade" style={{backgroundColor:"#F0F0F0",boxShadow:"none"}} position={`${Scroll&&"fixed"}`} className={`${Scroll && "AnimaiionNavbarSticky"} ${Scroll && "bg-white"}  `}>
             <Box  className="flex  ml-4 pt-10  ">
-            {!Scroll ?     <img className="w-190 imgResposive" src={process.env.PUBLIC_URL +`/binpact002.png` }/>  :  <img  className="w-190 imgResposive"   src="binpact002.png"/>}
+            {!Scroll ?     <img className="w-190 imgResposive" src={process.env.PUBLIC_URL +`/Binpact.svg` }/>  :  <img  className="w-190 imgResposive"   src="Binpact.svg.svg"/>}
            
          
             <Box className="mt-20 ml-40 flex text-sm NavBarResposive  text-white  		">
@@ -282,7 +282,7 @@ const NavbarFilter = ({Rate , setRate}) => {
                          <AppBar  boxShadow={5} position="fixed"  className={`bg-gray-100 bg-white  ${Menu && "AnimaiionNavbarSticky"} `} >
                                 <Box className="flex flex-center mt-4">
                                 <Box className="wp-50 mt-1 ml-4">
-                                <img className="w-190 imgResposive" src={process.env.PUBLIC_URL +`/binpact002.png` }/>
+                                <img className="w-190 imgResposive" src={process.env.PUBLIC_URL +`/Binpact.svg.svg` }/>
                                 </Box>
                                 <Box className="wp-50 mt-4" >
                                 <MenuIcon onClick={()=>setMenud(!Menu)} style={{marginLeft:"80%"}} className={`text-gray-500`}/>

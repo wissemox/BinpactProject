@@ -1,12 +1,16 @@
 import React from 'react'
 import {Container , Box , Typography , IconButton , AppBar, Button  } from '@material-ui/core'
 import {Bar , Line} from 'react-chartjs-2'
+import TimerIcon from '@material-ui/icons/Timer';
+import CheckIcon from '@material-ui/icons/Check';
 const Main = () => {
     return (
-        <Container>
+          <Box className="flex">
+                       <Container>
+
            <Box className="flex flex-left      marginLeaftResposived    flex-wrap  ">
                {/* PrestangeBox */}
-               <Box className="flex bg-white mt-4 mb-4 py-4 mr-10 wp-Resposive">
+               <Box className="flex  bg-white mt-4 mb-4 py-4 mr-10 wp-Resposive">
                     {/* TypographeBox */}
                     <Box>
                     <Box className="ml-4 mr-10 flex wp-Resposive ">     
@@ -278,12 +282,53 @@ const Main = () => {
  
               </Box>
       
-             
            </Box>
-           <Box className="mb-20" >
+           
+             
+               </Container>
+               
+               <Box style={{width:"13%"}} className="bg-white TestTestDisplaynone " >
+                    {/* Binz */}
+                    <Box className="mt-10 ml-2 flex ">
+                    <img style={{width:"50px"}}  src={process.env.PUBLIC_URL +"/Binz.png"}/>
+                    <Box className="ml-4">
+                         <Typography style={{fontSize:"16px"}} variant="p">Annual Taxes </Typography>
+                         <Box>
+                         <Typography style={{fontWeight:"600"}} variant="p">251K</Typography>
+                         </Box>
+                    </Box>
+                    </Box>
+                    
+
+                    <Box className="mt-10 ml-2 flex">
+                    <Box>
+                    <TimerIcon style={{fontSize:"50px" , color:"#184981"}}  />
+                    </Box>
+                    <Box className="ml-4">
+                         <Typography style={{fontSize:"12px"}} variant="p">Product in Progress</Typography>
+                         <Box>
+                         <Typography style={{fontWeight:"600"}} variant="p">60</Typography>
+                         </Box>
+                    </Box>
+                    </Box>
+
+
+                    <Box className="mt-10 ml-2 flex ">
+                    <Box>
+                    <CheckIcon style={{fontSize:"50px" , color:"#184981"}}  />
+                    </Box>
+                    <Box className="ml-4">
+                         <Typography style={{fontSize:"12px"}} variant="p">Product in Progress</Typography>
+                         <Box>
+                         <Typography style={{fontWeight:"600"}} variant="p">60</Typography>
+                         </Box>
+                    </Box>
+                    </Box>
 
                </Box>
-        </Container>
+          </Box>
+
+       
     )
 }
 

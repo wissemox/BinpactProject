@@ -31,7 +31,7 @@ const RegisterStep3 = ({setRedirectRegister2}) => {
         
         <>
         {Redirect ? <RegisterStep4/>:  <Box className=" w-15 h-720 BackgroundImageurl02 placeholder-blue-500">
-             {console.log(email)}
+             {console.log(role)}
                 {/* Typograpqh */}
                 <Box   className="flex flex-center  mb-10 pt-10 TestResposive paddindTopResposive ">
                     <Box >

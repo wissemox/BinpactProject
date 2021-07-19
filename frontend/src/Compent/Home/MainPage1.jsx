@@ -128,7 +128,7 @@ const MainPage = () => {
                          <AppBar  boxShadow={5} position="fixed"  className={`bg-gray-100 bg-white  ${Menu && "AnimaiionNavbarSticky"} `} >
                                 <Box className="flex flex-center mt-2">
                                 <Box className="wp-50 mt-1 ml-10">
-                                <img className="w-190 imgResposive" src="binpact002.png"/>
+                                <img className="w-190 imgResposive" src="Binpact.svg"/>
                                 </Box>
                                 <Box className="wp-50 mt-4" >
                                 <MenuIcon onClick={()=>setMenud(!Menu)} style={{marginLeft:"80%"}} className={`text-gray-500`}/>
@@ -285,12 +285,12 @@ const MainPage = () => {
 
 {/* 600 RESPOSIVE */}
 <Parallax className="ParallaxResposive hidden"  bgImage={"Untitled-1.jpg"} strength={600}> 
-<Box className="w-15  	h-720 ">
+<Box className="w-15  	h-800 ">
     <Container>
         {/* NavBar */}
             <AppBar data-aos="fade" style={{backgroundColor:"transparent",boxShadow:"none"}} position={`${Scroll&&"fixed"}`} className={`${Scroll && "AnimaiionNavbarSticky"} ${Scroll && "bg-white"}  `}>
             <Box  className="flex  ml-4 pt-10 ">
-            {!Scroll ?     <img  className="w-190  imgResposive"   src="binpact002.png"/> :  <img  className="w-190 imgResposive"   src="binpact002.png"/>}
+            {!Scroll ?     <img  className="w-190  imgResposive"   src="Binpact.svg"/> :  <img  className="w-190 imgResposive"   src="Binpact.svg"/>}
            
          
             <Box className="mt-20 ml-40 flex text-sm NavBarResposive  text-white  		">
@@ -317,7 +317,7 @@ const MainPage = () => {
                          <AppBar  boxShadow={5} position="fixed"  className={`bg-gray-100 bg-white  ${Menu && "AnimaiionNavbarSticky"} `} >
                                 <Box className="flex flex-center mt-4">
                                 <Box className="wp-50 mt-1 ml-4">
-                                <img className="w-190 imgResposive" src="binpact002.png"/>
+                                <img className="w-190 imgResposive" src="Binpact.svg"/>
                                 </Box>
                                 <Box className="wp-50 mt-4" >
                                 <MenuIcon onClick={()=>setMenud(!Menu)} style={{marginLeft:"80%"}} className={`text-gray-500`}/>
@@ -348,9 +348,11 @@ const MainPage = () => {
              
          <Container> {/* Title */}
                 <Box data-aos="fade-down-left" className="ml-3p">
+                    {/* ${Scrol02l ? "marginToponScrolTailte":"mt-180"} */}
                     <Box   className="tracking-widest ml-40 wp-100  mr-40 mt-180">
+                        
                         <Box   className="flex">
-                            <h3  variant="h3" className="pr-40 font-medium tracking-widest leading-snug  ml-3p text-5xl text-white">Troquez des produits de qualité
+                            <h3  variant="h3" className={`pr-40 font-medium tracking-widest ${Scrol02l ? "marginToponScrolTailte02":"mt-180"}  leading-snug  ml-3p text-5xl text-white`}>Troquez des produits de qualité
                             dans une communuté engagée</h3>
                         </Box>
                     </Box>
